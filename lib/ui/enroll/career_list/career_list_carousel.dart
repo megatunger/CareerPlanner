@@ -27,8 +27,15 @@ class _CareerListCarouselState extends State<CareerListCarousel> {
         builder: (context, AsyncSnapshot<Event> snapshot) {
           if (snapshot.hasData) {
             return CarouselSlider(
-              options:
-                  CarouselOptions(height: this.widget.screenSize.height * 0.3),
+              options: CarouselOptions(
+                height: this.widget.screenSize.height * 0.3,
+                enableInfiniteScroll: true,
+                reverse: false,
+                autoPlay: true,
+                autoPlayInterval: Duration(seconds: 2),
+                autoPlayAnimationDuration: Duration(milliseconds: 800),
+                autoPlayCurve: Curves.fastOutSlowIn,
+              ),
               items: convertToList(snapshot.data.snapshot).map((careerObject) {
                 return Builder(
                   builder: (BuildContext context) {
@@ -112,11 +119,8 @@ class _CareerListCarouselState extends State<CareerListCarousel> {
     List<dynamic> values = data.value;
     values.forEach((element) {
       if (element != null) {
-        var map = HashMap.from(element);
-        careerList.add(CareerObject(
-            id: map['id'],
-            imagePath: map['image_path'],
-            careerName: map['career_name']));
+        careerList
+            .add(CareerObject.fromJson(Map<String, dynamic>.from(element)));
       }
     });
     return careerList;

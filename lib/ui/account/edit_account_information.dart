@@ -11,9 +11,9 @@ class _EditAccountInformationState extends State<EditAccountInformation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Sửa Thông Tin Cá Nhân'),
-      ),
-    );
+        appBar: AppBar(
+          title: Text('Cập Nhật Thông Tin Cá Nhân'),
+        ),
+        body: EditAccountInformation());
   }
 }

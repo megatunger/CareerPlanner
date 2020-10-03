@@ -1,8 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:careerplanner/bloc/account/account_bloc.dart';
 import 'package:careerplanner/model/enroll/CareerObject.dart';
+import 'package:careerplanner/ui/account/authentication_redirect.dart';
+import 'package:careerplanner/util/constants.dart';
 import 'package:careerplanner/util/theme.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 class CareerDetailWidget extends StatefulWidget {
   CareerDetailWidget({Key key, this.careerObject}) : super(key: key);
@@ -13,9 +19,15 @@ class CareerDetailWidget extends StatefulWidget {
 }
 
 class _CareerDetailWidgetState extends State<CareerDetailWidget> {
+  final favourite = false;
+  GlobalKey favButton = GlobalKey();
+
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _afterLayout();
+    });
   }
 
   @override
@@ -88,17 +100,122 @@ class _CareerDetailWidgetState extends State<CareerDetailWidget> {
                   ),
                   actions: [
                     FlatButton.icon(
+                        key: favButton,
                         textColor: Colors.white,
-                        onPressed: () {},
-                        icon: Icon(Icons.favorite_outline_rounded),
+                        onPressed: () async {
+                          tapFavourite();
+                        },
+                        icon: StreamBuilder(
+                            stream: accountBloc.didFavouriteCareer(
+                                this.widget.careerObject.careerCode),
+                            builder: (context, stream) {
+                              if (stream.hasData) {
+                                print(stream.data);
+                              }
+                              return Icon(Icons.favorite_outline_rounded);
+                            }),
                         label: Text('Yêu Thích'))
                   ],
                 ),
+                SliverToBoxAdapter(
+                    child: Column(
+                  children: [
+                    Padding(
+                        padding: EdgeInsets.all(16),
+                        child: Text(
+                          '${this.widget.careerObject.description}',
+                          style: GoogleFonts.robotoSlab(
+                              fontSize: 18, fontWeight: FontWeight.w500),
+                        )),
+                    SizedBox(height: 36),
+                    Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Image.asset(
+                          'assets/illustrations/eastwood-school-bag.png'),
+                    ),
+                  ],
+                ))
               ],
             ),
           ),
         ],
       ),
     );
+  }
+
+  void showTutorial() {
+    TutorialCoachMark tutorial = TutorialCoachMark(context,
+        targets: [
+          TargetFocus(identify: "Target 2", keyTarget: favButton, contents: [
+            ContentTarget(
+                align: AlignContent.left,
+                child: Container(
+                  child: SafeArea(
+                      child: Padding(
+                    padding: const EdgeInsets.only(top: 16.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Ngành nghề này hấp dẫn bạn?",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 20.0),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10.0),
+                          child: Text(
+                            "Hãy bấm yêu thích để chúng tôi có thể đưa ra những phân tích về bạn chính xác hơn nhé.",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        )
+                      ],
+                    ),
+                  )),
+                ))
+          ])
+        ], // List<TargetFocus>
+        colorShadow: CareerPlannerTheme.secondaryColor, // DEFAULT Colors.black
+        // alignSkip: Alignment.bottomRight,
+        textSkip: "Bỏ Qua",
+        paddingFocus: 30, onFinish: () {
+      SharedPreferences.getInstance().then(
+          (value) => value.setBool(Constants.showFavButtonGuideKey, true));
+    }, onClickTarget: (target) {}, onClickSkip: () {})
+      ..show();
+  }
+
+  _afterLayout() {
+    SharedPreferences.getInstance().then((value) {
+      final shown = value.get(Constants.showFavButtonGuideKey);
+      print('${Constants.showFavButtonGuideKey}: $shown');
+      if (shown != true) {
+        Future.delayed(Duration(milliseconds: 100), () {
+          showTutorial();
+        });
+      }
+    });
+  }
+
+  void tapFavourite() async {
+    if (FirebaseAuth.instance.currentUser == null) {
+      print("Can't favourite, please log in");
+      showModalBottomSheet(
+          context: context,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(12),
+            ),
+          ),
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          builder: (builder) {
+            return AuthenticationRedirect();
+          });
+    } else {
+      await accountBloc.updateFavouriteCareer(
+          this.widget.careerObject.careerCode, !favourite);
+    }
   }
 }

@@ -47,6 +47,10 @@ dependencies:
   liquid_pull_to_refresh: ^2.0.0
   cached_network_image: ^2.3.2+1
   flutter_cache_manager: ^1.4.2
+  tutorial_coach_mark: ^0.5.1
+  shared_preferences: ^0.5.12
+  introduction_screen: ^1.0.9
+
 
 dev_dependencies:
   flutter_launcher_icons: ^0.8.0
@@ -74,6 +78,15 @@ flutter:
     - assets/illustrations/flame-training.png
     - assets/illustrations/kingdom-4.png
     - assets/illustrations/friendship.png
+    - assets/illustrations/eastwood-school-bag.png
+    - assets/illustrations/bermuda-704.png
+    - assets/illustrations/bermuda-classroom.png
+    - assets/illustrations/bermuda-765.png
+    - assets/illustrations/bermuda-school.png
+    - assets/illustrations/bermuda-page-not-found.png
+    - assets/illustrations/bermuda-759.png
+    - assets/illustrations/bermuda-699.png
+    - assets/illustrations/sign-in-4.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

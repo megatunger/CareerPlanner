@@ -3,6 +3,7 @@ import 'package:careerplanner/util/constants.dart';
 import 'package:careerplanner/util/router.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class StartupWidget extends StatefulWidget {
   StartupWidget({Key key}) : super(key: key);
@@ -27,8 +28,12 @@ class _StartupWidgetState extends State<StartupWidget> {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           if (loaded == false) {
-            Future.delayed(Duration(seconds: 1), () {
-              Navigator.pushNamed(context, Routes.homeRoute);
+            SharedPreferences.getInstance().then((value) {
+              if (value.getBool(Constants.shownOnboardingScreen) == true) {
+                Navigator.pushReplacementNamed(context, Routes.homeRoute);
+              } else {
+                Navigator.pushReplacementNamed(context, Routes.onBoardingRoute);
+              }
             });
           }
           loaded = true;

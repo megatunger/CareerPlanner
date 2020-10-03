@@ -20,7 +20,7 @@ class _AnimatedSplashState extends State<AnimatedSplash> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircularProgressIndicator(),
+                  CircularProgressIndicator(backgroundColor: Colors.white),
                   SizedBox(height: 16),
                   Text(
                     '${this.widget.message}',

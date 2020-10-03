@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'package:careerplanner/ui/enroll/career_list/career_list_carousel.dart';
 import 'package:careerplanner/ui/enroll/career_list/career_list_header.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 
 class EnrollWidget extends StatefulWidget {
@@ -17,7 +19,7 @@ class _EnrollWidgetState extends State<EnrollWidget> {
 
   Future<void> _handleRefresh() {
     final Completer<void> completer = Completer<void>();
-    Timer(const Duration(milliseconds: 400), () {
+    Timer(const Duration(milliseconds: 200), () {
       completer.complete();
     });
     return completer.future.then<void>((_) {});

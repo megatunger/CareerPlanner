@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:careerplanner/model/account/account.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -27,6 +29,28 @@ class AccountBloc {
       user.updateProfile(displayName: _account.name);
     }
     _fireStore.collection("users").doc(_account.uid).update(_account.toJson());
+  }
+
+  Future<void> updateFavouriteCareer(String careerCode, bool favourite) async {
+    Map<String, dynamic> data = {
+      "career_code": "$careerCode",
+      "favourite": favourite
+    };
+    print(data);
+    _fireStore
+        .collection("users")
+        .doc(currentUser().uid)
+        .collection("user_careers")
+        .add(data);
+  }
+
+  Stream<QuerySnapshot> didFavouriteCareer(String careerCode) {
+    return _fireStore
+        .collection("users")
+        .doc(currentUser().uid)
+        .collection('user_careers')
+        .where('career_code', isEqualTo: careerCode)
+        .snapshots();
   }
 
   void logout() {

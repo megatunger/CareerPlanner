@@ -1,10 +1,7 @@
-import 'dart:collection';
-
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:careerplanner/model/enroll/CareerObject.dart';
+import 'package:careerplanner/ui/enroll/career_list/listing_all_career/career_card.dart';
 import 'package:careerplanner/ui/shared/loading_widget.dart';
 import 'package:careerplanner/util/constants.dart';
-import 'package:careerplanner/util/router.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -94,83 +91,7 @@ class _ListingAllCareerState extends State<ListingAllCareer> {
                             delegate:
                                 SliverChildBuilderDelegate((context, index) {
                           final _careerObject = data[index];
-                          return GestureDetector(
-                            onTap: () {
-                              Navigator.pushNamed(
-                                  context, Routes.careerDetailRoute,
-                                  arguments: _careerObject);
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 16.0, right: 16, top: 4, bottom: 4),
-                              child: Container(
-                                  height: 120,
-                                  child: Card(
-                                    semanticContainer: true,
-                                    color: CareerPlannerTheme.primaryColor,
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    child: Stack(
-                                      fit: StackFit.expand,
-                                      children: [
-                                        Hero(
-                                          tag:
-                                              'career_cover_${_careerObject.id}',
-                                          child: ColorFiltered(
-                                            colorFilter: ColorFilter.mode(
-                                                Colors.black.withOpacity(0.6),
-                                                BlendMode.srcOver),
-                                            child: CachedNetworkImage(
-                                              imageUrl: _careerObject.imagePath,
-                                              fit: BoxFit.cover,
-                                              progressIndicatorBuilder: (context,
-                                                      url, downloadProgress) =>
-                                                  Center(
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                              value:
-                                                                  downloadProgress
-                                                                      .progress,
-                                                              backgroundColor:
-                                                                  Colors
-                                                                      .white)),
-                                              errorWidget:
-                                                  (context, url, error) =>
-                                                      Icon(Icons.error),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsets.fromLTRB(16, 0, 8, 16),
-                                          child: Align(
-                                              alignment: Alignment.bottomLeft,
-                                              child: Hero(
-                                                  tag:
-                                                      'career_title_${_careerObject.id}',
-                                                  child: Text(
-                                                    '${_careerObject.careerName}',
-                                                    style:
-                                                        GoogleFonts.lexendDeca(
-                                                            textStyle: Theme.of(
-                                                                    context)
-                                                                .textTheme
-                                                                .headline5,
-                                                            fontWeight:
-                                                                FontWeight.w700,
-                                                            color:
-                                                                Colors.white),
-                                                    textAlign: TextAlign.left,
-                                                  ))),
-                                        )
-                                      ],
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    elevation: 0,
-                                  )),
-                            ),
-                          );
+                          return CareerCard(_careerObject);
                         }, childCount: data.length));
                       } else {
                         return SliverFillRemaining(child: LoadingWidget());
@@ -190,11 +111,8 @@ class _ListingAllCareerState extends State<ListingAllCareer> {
     List<dynamic> values = data.value;
     values.forEach((element) {
       if (element != null) {
-        var map = HashMap.from(element);
-        careerList.add(CareerObject(
-            id: map['id'],
-            imagePath: map['image_path'],
-            careerName: map['career_name']));
+        careerList
+            .add(CareerObject.fromJson(Map<String, dynamic>.from(element)));
       }
     });
     return careerList;

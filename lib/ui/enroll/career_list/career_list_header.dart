@@ -17,19 +17,18 @@ class CareerListHeader extends StatelessWidget {
               children: [
                 Text(
                   'NHÓM NGÀNH',
-                  style: GoogleFonts.lexendDeca(
-                      textStyle: Theme.of(context).textTheme.headline6,
-                      fontWeight: FontWeight.w700,
-                      color: CareerPlannerTheme.thirdColor),
+                  style: Theme.of(context).textTheme.headline6.copyWith(
+                      color: CareerPlannerTheme.thirdColor,
+                      fontWeight: FontWeight.w700),
                   textAlign: TextAlign.left,
                 ),
                 SizedBox(height: 4),
                 Text(
                   'Thông tin hữu ích về ngành nghề',
-                  style: GoogleFonts.lexendDeca(
-                    textStyle: Theme.of(context).textTheme.caption,
-                    fontWeight: FontWeight.w700,
-                  ),
+                  style: Theme.of(context)
+                      .textTheme
+                      .caption
+                      .copyWith(fontWeight: FontWeight.w700, fontSize: 14),
                 )
               ]),
           FlatButton(
