@@ -89,6 +89,8 @@ flutter:
     - assets/illustrations/sign-in-4.png
     - assets/illustrations/clip-1063.png
     - assets/illustrations/hugo-page-not-found.png
+    - assets/illustrations/4086124.png
+    - assets/icon/ICON_CIRCLE.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

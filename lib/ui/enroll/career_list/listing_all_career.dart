@@ -2,7 +2,6 @@ import 'package:careerplanner/model/enroll/CareerObject.dart';
 import 'package:careerplanner/ui/enroll/career_list/listing_all_career/career_card.dart';
 import 'package:careerplanner/ui/shared/loading_widget.dart';
 import 'package:careerplanner/util/constants.dart';
-import 'package:careerplanner/util/router.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -130,12 +129,13 @@ class _ListingAllCareerState extends State<ListingAllCareer> {
       context: context,
       delegate: SearchPage<CareerObject>(
         items: data,
-        searchLabel: '',
+        searchLabel: 'Nhập ở đây',
         suggestion: Padding(
           padding: const EdgeInsets.all(32.0),
           child: Column(
             children: [
-              Image.asset("assets/illustrations/clip-1063.png"),
+              Expanded(
+                  child: Image.asset("assets/illustrations/clip-1063.png")),
               SizedBox(height: 16),
               Text('Bạn muốn tìm hiểu về ngành gì?',
                   style: Theme.of(context).textTheme.headline6)
@@ -146,8 +146,10 @@ class _ListingAllCareerState extends State<ListingAllCareer> {
           padding: const EdgeInsets.all(32.0),
           child: Column(
             children: [
-              Image.asset("assets/illustrations/hugo-page-not-found.png"),
-              SizedBox(height: 16),
+              Expanded(
+                  child: Image.asset(
+                      "assets/illustrations/hugo-page-not-found.png")),
+              SizedBox(height: 8),
               Text('Không tìm thấy ngành này :(',
                   style: Theme.of(context).textTheme.headline6)
             ],

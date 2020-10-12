@@ -1,7 +1,6 @@
 import 'package:careerplanner/util/router.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CareerListHeader extends StatelessWidget {
   @override
@@ -11,26 +10,30 @@ class CareerListHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'NHÓM NGÀNH',
-                  style: Theme.of(context).textTheme.headline6.copyWith(
-                      color: CareerPlannerTheme.thirdColor,
-                      fontWeight: FontWeight.w700),
-                  textAlign: TextAlign.left,
-                ),
-                SizedBox(height: 4),
-                Text(
-                  'Thông tin hữu ích về ngành nghề',
-                  style: Theme.of(context)
-                      .textTheme
-                      .caption
-                      .copyWith(fontWeight: FontWeight.w700, fontSize: 14),
-                )
-              ]),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.5,
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'NHÓM NGÀNH',
+                    style: Theme.of(context).textTheme.headline6.copyWith(
+                        color: CareerPlannerTheme.thirdColor,
+                        fontWeight: FontWeight.w700),
+                    textAlign: TextAlign.left,
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    'Thông tin hữu ích về ngành nghề',
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context)
+                        .textTheme
+                        .caption
+                        .copyWith(fontWeight: FontWeight.w700, fontSize: 14),
+                  )
+                ]),
+          ),
           FlatButton(
             onPressed: () {
               Navigator.pushNamed(context, Routes.careerAllRoute);

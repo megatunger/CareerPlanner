@@ -1,4 +1,5 @@
 import 'package:careerplanner/model/enroll/CareerObject.dart';
+import 'package:careerplanner/model/enroll/university/university_object.dart';
 import 'package:careerplanner/ui/about_us/about_us_widget.dart';
 import 'package:careerplanner/ui/account/authentication_redirect.dart';
 import 'package:careerplanner/ui/account/edit_account_information.dart';
@@ -6,6 +7,8 @@ import 'package:careerplanner/ui/account/login/phone_login_widget.dart';
 import 'package:careerplanner/ui/enroll/career/career_detail_widget.dart';
 import 'package:careerplanner/ui/enroll/career_list/listing_all_career.dart';
 import 'package:careerplanner/ui/enroll/career_list/search_career.dart';
+import 'package:careerplanner/ui/enroll/university/university_detail.dart';
+import 'package:careerplanner/ui/enroll/university_list/listing_all_university.dart';
 import 'package:careerplanner/ui/layout/layout_widget.dart';
 import 'package:careerplanner/ui/splash/onboarding_widget.dart';
 import 'package:careerplanner/ui/startup_widget.dart';
@@ -36,6 +39,15 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ListingAllCareer());
       case '/career/search':
         return MaterialPageRoute(builder: (_) => SearchCareer());
+      case '/university/detail':
+        var _university = settings.arguments as UniversityObject;
+        return MaterialPageRoute(
+            builder: (_) => UniversityDetail(
+                  universityObject: _university,
+                ));
+      case '/university/all':
+        return MaterialPageRoute(builder: (_) => ListingAllUniversity());
+
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
@@ -57,4 +69,6 @@ class Routes {
   static const String careerDetailRoute = '/career/detail';
   static const String careerAllRoute = '/career/all';
   static const String searchCareerRoute = '/career/search';
+  static const String universityDetailRoute = '/university/detail';
+  static const String universityAllRoute = '/university/all';
 }

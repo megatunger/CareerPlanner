@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:careerplanner/ui/enroll/career_list/career_list_carousel.dart';
 import 'package:careerplanner/ui/enroll/career_list/career_list_header.dart';
-import 'package:firebase_database/firebase_database.dart';
+import 'package:careerplanner/ui/enroll/university_list/university_bubbles_widget.dart';
+import 'package:careerplanner/ui/enroll/university_list/university_list_header.dart';
+import 'package:careerplanner/ui/enroll/university_list/university_show_all_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 
 class EnrollWidget extends StatefulWidget {
   EnrollWidget({Key key}) : super(key: key);
@@ -14,17 +14,6 @@ class EnrollWidget extends StatefulWidget {
 }
 
 class _EnrollWidgetState extends State<EnrollWidget> {
-  final GlobalKey<LiquidPullToRefreshState> _refreshIndicatorKey =
-      GlobalKey<LiquidPullToRefreshState>();
-
-  Future<void> _handleRefresh() {
-    final Completer<void> completer = Completer<void>();
-    Timer(const Duration(milliseconds: 200), () {
-      completer.complete();
-    });
-    return completer.future.then<void>((_) {});
-  }
-
   @override
   void initState() {
     super.initState();
@@ -33,18 +22,26 @@ class _EnrollWidgetState extends State<EnrollWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: LiquidPullToRefresh(
-            key: _refreshIndicatorKey, // key if you want to add
-            onRefresh: _handleRefresh,
-            animSpeedFactor: 8.0,
-            child: SafeArea(
-              child: ListView(
-                children: [
-                  CareerListHeader(),
-                  SizedBox(height: 16),
-                  CareerListCarousel(screenSize: MediaQuery.of(context).size)
-                ],
-              ),
-            )));
+        body: Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          colorFilter:
+              ColorFilter.mode(Colors.white.withOpacity(0.08), BlendMode.dstIn),
+          image: AssetImage("assets/illustrations/4086124.png"),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: ListView(
+        children: [
+          CareerListHeader(),
+          SizedBox(height: 16),
+          CareerListCarousel(screenSize: MediaQuery.of(context).size),
+          Divider(),
+          UniversityListHeader(),
+          UniversityBubblesWidget(),
+          UniversityShowAllButton()
+        ],
+      ) /* add child content here */,
+    ));
   }
 }

@@ -49,7 +49,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Tư vấn định hướng cho bạn bằng Machine Learning",
+          title: "Tư vấn định hướng thông minh",
           body:
               "Ứng dụng sẽ phân tích các tương tác của bạn với nội dung trên ứng dụng, kết hợp với bài trắc nghiệp để đưa ra những lời khuyên thích hợp cho bạn",
           image: _buildImage('bermuda-page-not-found.png'),
@@ -113,10 +113,11 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
       skip: const Text('Bỏ Qua'),
       next: const Icon(Icons.arrow_forward),
       done: Text(''),
-      dotsDecorator: const DotsDecorator(
+      dotsDecorator: DotsDecorator(
         size: Size(10.0, 10.0),
-        color: Color(0xFFBDBDBD),
+        color: CareerPlannerTheme.secondaryColor.withOpacity(0.2),
         activeSize: Size(22.0, 10.0),
+        activeColor: CareerPlannerTheme.secondaryColor,
         activeShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),
