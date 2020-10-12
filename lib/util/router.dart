@@ -5,6 +5,7 @@ import 'package:careerplanner/ui/account/edit_account_information.dart';
 import 'package:careerplanner/ui/account/login/phone_login_widget.dart';
 import 'package:careerplanner/ui/enroll/career/career_detail_widget.dart';
 import 'package:careerplanner/ui/enroll/career_list/listing_all_career.dart';
+import 'package:careerplanner/ui/enroll/career_list/search_career.dart';
 import 'package:careerplanner/ui/layout/layout_widget.dart';
 import 'package:careerplanner/ui/splash/onboarding_widget.dart';
 import 'package:careerplanner/ui/startup_widget.dart';
@@ -33,6 +34,8 @@ class AppRouter {
             builder: (_) => CareerDetailWidget(careerObject: _career));
       case '/career/all':
         return MaterialPageRoute(builder: (_) => ListingAllCareer());
+      case '/career/search':
+        return MaterialPageRoute(builder: (_) => SearchCareer());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
@@ -53,4 +56,5 @@ class Routes {
   static const String aboutUsRoute = '/aboutUs';
   static const String careerDetailRoute = '/career/detail';
   static const String careerAllRoute = '/career/all';
+  static const String searchCareerRoute = '/career/search';
 }

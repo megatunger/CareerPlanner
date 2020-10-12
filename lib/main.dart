@@ -1,6 +1,7 @@
 import 'package:careerplanner/util/router.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_sentry/flutter_sentry.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() {
   runApp(App());
   SharedPreferences.getInstance().then((value) {
-    // value.clear();
+    value.clear();
   });
 }
 
@@ -26,6 +27,7 @@ void main() {
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChannels.textInput.invokeMethod('TextInput.hide');
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouter.generateRoute,
@@ -33,7 +35,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: GoogleFonts.quicksandTextTheme(
+        textTheme: GoogleFonts.lexendDecaTextTheme(
           Theme.of(context).textTheme,
         ),
       ),

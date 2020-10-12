@@ -4,6 +4,7 @@ import 'package:careerplanner/model/enroll/CareerObject.dart';
 import 'package:careerplanner/ui/account/authentication_redirect.dart';
 import 'package:careerplanner/util/constants.dart';
 import 'package:careerplanner/util/theme.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,7 +20,7 @@ class CareerDetailWidget extends StatefulWidget {
 }
 
 class _CareerDetailWidgetState extends State<CareerDetailWidget> {
-  final favourite = false;
+  bool favourite = false;
   GlobalKey favButton = GlobalKey();
 
   @override
@@ -42,6 +43,7 @@ class _CareerDetailWidgetState extends State<CareerDetailWidget> {
                   expandedHeight: MediaQuery.of(context).size.height * 0.4,
                   stretch: true,
                   backgroundColor: CareerPlannerTheme.primaryColor,
+                  pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
                     stretchModes: [
                       StretchMode.zoomBackground,
@@ -51,6 +53,7 @@ class _CareerDetailWidgetState extends State<CareerDetailWidget> {
                       children: [
                         Positioned.fill(
                           child: Hero(
+                            transitionOnUserGestures: true,
                             tag: 'career_cover_${this.widget.careerObject.id}',
                             child: ColorFiltered(
                               colorFilter: ColorFilter.mode(
@@ -79,6 +82,7 @@ class _CareerDetailWidgetState extends State<CareerDetailWidget> {
                               children: [
                                 Expanded(
                                   child: Hero(
+                                      transitionOnUserGestures: true,
                                       tag:
                                           'career_title_${this.widget.careerObject.id}',
                                       child: Text(
@@ -108,11 +112,23 @@ class _CareerDetailWidgetState extends State<CareerDetailWidget> {
                         icon: StreamBuilder(
                             stream: accountBloc.didFavouriteCareer(
                                 this.widget.careerObject.careerCode),
-                            builder: (context, stream) {
-                              if (stream.hasData) {
-                                print(stream.data);
+                            builder: (context,
+                                AsyncSnapshot<QuerySnapshot> snapshot) {
+                              if (snapshot.hasData) {
+                                if (snapshot.data.docs.length > 0 &&
+                                    snapshot.data.docs.last
+                                            .data()["favourite"] ==
+                                        true) {
+                                  print("Favourite this career!");
+                                  favourite = true;
+                                } else {
+                                  print("Not favourite this career!");
+                                  favourite = false;
+                                }
                               }
-                              return Icon(Icons.favorite_outline_rounded);
+                              return (favourite == true)
+                                  ? Icon(Icons.favorite)
+                                  : Icon(Icons.favorite_outline_rounded);
                             }),
                         label: Text('Yêu Thích'))
                   ],
@@ -200,22 +216,7 @@ class _CareerDetailWidgetState extends State<CareerDetailWidget> {
   }
 
   void tapFavourite() async {
-    if (FirebaseAuth.instance.currentUser == null) {
-      print("Can't favourite, please log in");
-      showModalBottomSheet(
-          context: context,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              top: Radius.circular(12),
-            ),
-          ),
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          builder: (builder) {
-            return AuthenticationRedirect();
-          });
-    } else {
-      await accountBloc.updateFavouriteCareer(
-          this.widget.careerObject.careerCode, !favourite);
-    }
+    await accountBloc.updateFavouriteCareer(
+        this.widget.careerObject.careerCode, !favourite);
   }
 }

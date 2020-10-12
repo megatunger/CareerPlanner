@@ -58,6 +58,7 @@ class _CareerListCarouselState extends State<CareerListCarousel> {
                                 fit: StackFit.expand,
                                 children: [
                                   Hero(
+                                    transitionOnUserGestures: true,
                                     tag: 'career_cover_${careerObject.id}',
                                     child: ColorFiltered(
                                       colorFilter: ColorFilter.mode(
@@ -84,6 +85,7 @@ class _CareerListCarouselState extends State<CareerListCarousel> {
                                     padding: EdgeInsets.all(16),
                                     child: Center(
                                         child: Hero(
+                                            transitionOnUserGestures: true,
                                             tag:
                                                 'career_title_${careerObject.id}',
                                             child: Text(

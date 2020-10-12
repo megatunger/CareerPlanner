@@ -1,6 +1,7 @@
 import 'package:careerplanner/util/constants.dart';
 import 'package:careerplanner/util/router.dart';
 import 'package:careerplanner/util/theme.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -17,9 +18,12 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
 
   Widget _buildImage(String assetName) {
     return SafeArea(
-        child: Align(
-      child: Image.asset('assets/illustrations/$assetName'),
-      alignment: Alignment.center,
+        child: Padding(
+      padding: const EdgeInsets.all(32.0),
+      child: Align(
+        child: Image.asset('assets/illustrations/$assetName'),
+        alignment: Alignment.center,
+      ),
     ));
   }
 
@@ -122,6 +126,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
 
   void saveShownOnboarding() async {
     print('End of onboarding');
+    FirebaseAuth.instance.signInAnonymously();
     await SharedPreferences.getInstance().then((value) {
       value.setBool(Constants.shownOnboardingScreen, true);
       Navigator.pushReplacementNamed(context, Routes.homeRoute);

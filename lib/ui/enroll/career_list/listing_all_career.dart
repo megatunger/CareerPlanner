@@ -2,10 +2,12 @@ import 'package:careerplanner/model/enroll/CareerObject.dart';
 import 'package:careerplanner/ui/enroll/career_list/listing_all_career/career_card.dart';
 import 'package:careerplanner/ui/shared/loading_widget.dart';
 import 'package:careerplanner/util/constants.dart';
+import 'package:careerplanner/util/router.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:search_page/search_page.dart';
 
 class ListingAllCareer extends StatefulWidget {
   ListingAllCareer({Key key}) : super(key: key);
@@ -17,6 +19,8 @@ class ListingAllCareer extends StatefulWidget {
 }
 
 class _ListingAllCareerState extends State<ListingAllCareer> {
+  List<CareerObject> data = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,9 +78,12 @@ class _ListingAllCareerState extends State<ListingAllCareer> {
                   actions: [
                     FlatButton.icon(
                         textColor: Colors.white,
-                        onPressed: () {},
+                        onPressed: () {
+                          showSearchScreen();
+                        },
                         icon: Icon(Icons.search),
-                        label: Text('Tìm tên ngành'))
+                        label: Text('Tìm tên ngành',
+                            style: TextStyle(fontSize: 16)))
                   ],
                 ),
                 SliverToBoxAdapter(
@@ -86,7 +93,7 @@ class _ListingAllCareerState extends State<ListingAllCareer> {
                     stream: this.widget.careerListRef.onValue,
                     builder: (context, AsyncSnapshot<Event> snapshot) {
                       if (snapshot.hasData) {
-                        final data = convertToList(snapshot.data.snapshot);
+                        data = convertToList(snapshot.data.snapshot);
                         return SliverList(
                             delegate:
                                 SliverChildBuilderDelegate((context, index) {
@@ -116,5 +123,43 @@ class _ListingAllCareerState extends State<ListingAllCareer> {
       }
     });
     return careerList;
+  }
+
+  void showSearchScreen() {
+    showSearch(
+      context: context,
+      delegate: SearchPage<CareerObject>(
+        items: data,
+        searchLabel: '',
+        suggestion: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Column(
+            children: [
+              Image.asset("assets/illustrations/clip-1063.png"),
+              SizedBox(height: 16),
+              Text('Bạn muốn tìm hiểu về ngành gì?',
+                  style: Theme.of(context).textTheme.headline6)
+            ],
+          ),
+        ),
+        failure: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Column(
+            children: [
+              Image.asset("assets/illustrations/hugo-page-not-found.png"),
+              SizedBox(height: 16),
+              Text('Không tìm thấy ngành này :(',
+                  style: Theme.of(context).textTheme.headline6)
+            ],
+          ),
+        ),
+        filter: (career) => [
+          career.careerName,
+          career.description,
+          career.careerCode,
+        ],
+        builder: (career) => CareerCard(career),
+      ),
+    );
   }
 }

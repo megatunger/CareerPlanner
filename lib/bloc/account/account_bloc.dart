@@ -36,12 +36,17 @@ class AccountBloc {
       "career_code": "$careerCode",
       "favourite": favourite
     };
-    print(data);
     _fireStore
         .collection("users")
         .doc(currentUser().uid)
         .collection("user_careers")
-        .add(data);
+        .doc(careerCode)
+        .set(data, SetOptions(merge: true));
+    // _fireStore
+    //     .collection("users")
+    //     .doc(currentUser().uid)
+    //     .collection("user_careers")
+    //     .add(data);
   }
 
   Stream<QuerySnapshot> didFavouriteCareer(String careerCode) {

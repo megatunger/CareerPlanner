@@ -28,6 +28,7 @@ class CareerCard extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   Hero(
+                    transitionOnUserGestures: true,
                     tag: 'career_cover_${_careerObject.id}',
                     child: ColorFiltered(
                       colorFilter: ColorFilter.mode(
@@ -44,22 +45,36 @@ class CareerCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(16, 0, 8, 16),
-                    child: Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Hero(
-                            tag: 'career_title_${_careerObject.id}',
-                            child: Text(
-                              '${_careerObject.careerName}',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headline5
-                                  .copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
-                              textAlign: TextAlign.left,
-                            ))),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(16, 0, 8, 16),
+                        child: Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Hero(
+                                transitionOnUserGestures: true,
+                                tag: 'career_title_${_careerObject.id}',
+                                child: Text(
+                                  '${_careerObject.careerName}',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline5
+                                      .copyWith(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white),
+                                  textAlign: TextAlign.left,
+                                ))),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16.0),
+                        child: Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          color: Colors.white.withAlpha(100),
+                          size: 36,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
