@@ -1,4 +1,5 @@
-import 'package:careerplanner/model/enroll/CareerObject.dart';
+import 'package:careerplanner/model/enroll/career/career_data.dart';
+import 'package:careerplanner/model/enroll/career/career_object.dart';
 import 'package:careerplanner/ui/enroll/career_list/listing_all_career/career_card.dart';
 import 'package:careerplanner/ui/shared/loading_widget.dart';
 import 'package:careerplanner/util/constants.dart';
@@ -92,7 +93,8 @@ class _ListingAllCareerState extends State<ListingAllCareer> {
                     stream: this.widget.careerListRef.onValue,
                     builder: (context, AsyncSnapshot<Event> snapshot) {
                       if (snapshot.hasData) {
-                        data = convertToList(snapshot.data.snapshot);
+                        data = CareerData.fromSnapshot(snapshot.data.snapshot)
+                            .careers;
                         return SliverList(
                             delegate:
                                 SliverChildBuilderDelegate((context, index) {
@@ -109,19 +111,6 @@ class _ListingAllCareerState extends State<ListingAllCareer> {
         ],
       ),
     );
-  }
-
-  List<CareerObject> convertToList(DataSnapshot data) {
-    List<CareerObject> careerList = [];
-    careerList.clear();
-    List<dynamic> values = data.value;
-    values.forEach((element) {
-      if (element != null) {
-        careerList
-            .add(CareerObject.fromJson(Map<String, dynamic>.from(element)));
-      }
-    });
-    return careerList;
   }
 
   void showSearchScreen() {

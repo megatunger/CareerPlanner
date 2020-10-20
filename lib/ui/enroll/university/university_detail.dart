@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:careerplanner/model/enroll/university/university_object.dart';
-import 'package:careerplanner/ui/enroll/university/university_detail_header.dart';
 import 'package:careerplanner/ui/shared/web_view_container.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,5 @@
-import 'dart:collection';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:careerplanner/model/enroll/CareerObject.dart';
+import 'package:careerplanner/model/enroll/career/career_data.dart';
 import 'package:careerplanner/util/constants.dart';
 import 'package:careerplanner/util/router.dart';
 import 'package:careerplanner/util/theme.dart';
@@ -36,7 +35,9 @@ class _CareerListCarouselState extends State<CareerListCarousel> {
                 autoPlayAnimationDuration: Duration(milliseconds: 800),
                 autoPlayCurve: Curves.fastOutSlowIn,
               ),
-              items: convertToList(snapshot.data.snapshot).map((careerObject) {
+              items: CareerData.fromSnapshot(snapshot.data.snapshot)
+                  .careers
+                  .map((careerObject) {
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(
@@ -113,18 +114,5 @@ class _CareerListCarouselState extends State<CareerListCarousel> {
             return LinearProgressIndicator();
           }
         });
-  }
-
-  List<CareerObject> convertToList(DataSnapshot data) {
-    List<CareerObject> careerList = [];
-    careerList.clear();
-    List<dynamic> values = data.value;
-    values.forEach((element) {
-      if (element != null) {
-        careerList
-            .add(CareerObject.fromJson(Map<String, dynamic>.from(element)));
-      }
-    });
-    return careerList;
   }
 }

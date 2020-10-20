@@ -1,4 +1,3 @@
-import 'package:careerplanner/util/router.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:flutter/material.dart';
 

@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:careerplanner/ui/enroll/career_list/career_list_carousel.dart';
 import 'package:careerplanner/ui/enroll/career_list/career_list_header.dart';
 import 'package:careerplanner/ui/enroll/university_list/university_bubbles_widget.dart';
@@ -39,7 +38,8 @@ class _EnrollWidgetState extends State<EnrollWidget> {
           Divider(),
           UniversityListHeader(),
           UniversityBubblesWidget(),
-          UniversityShowAllButton()
+          UniversityShowAllButton(),
+          SizedBox(height: 64)
         ],
       ) /* add child content here */,
     ));

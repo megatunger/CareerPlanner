@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final universityObject = universityObjectFromJson(jsonString);
-
 // SAMPLE JSON
 
 // {
@@ -12,7 +8,8 @@
 // "university_name": "Đại học Bách Khoa Hà Nội",
 // "gioi_thieu_link": "https://www.hust.edu.vn/gioi-thieu",
 // "diem_nam_gan_day_link": "https://vtc.vn/diem-chuan-3-nam-gan-day-cua-dh-bach-khoa-ha-noi-ar566738.html",
-// "lien_he_link": "https://www.hust.edu.vn/web/vi/lien-he"
+// "lien_he_link": "https://www.hust.edu.vn/web/vi/lien-he",
+// "career_group": "realistic"
 // }
 
 import 'dart:convert';
@@ -27,6 +24,7 @@ class UniversityObject {
     this.gioiThieuLink,
     this.diemNamGanDayLink,
     this.lienHeLink,
+    this.careerGroup,
   });
 
   String imagePath;
@@ -37,6 +35,7 @@ class UniversityObject {
   String gioiThieuLink;
   String diemNamGanDayLink;
   String lienHeLink;
+  String careerGroup;
 
   factory UniversityObject.fromRawJson(String str) =>
       UniversityObject.fromJson(json.decode(str));
@@ -60,6 +59,7 @@ class UniversityObject {
             ? null
             : json["diem_nam_gan_day_link"],
         lienHeLink: json["lien_he_link"] == null ? null : json["lien_he_link"],
+        careerGroup: json["career_group"] == null ? null : json["career_group"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -72,5 +72,6 @@ class UniversityObject {
         "diem_nam_gan_day_link":
             diemNamGanDayLink == null ? null : diemNamGanDayLink,
         "lien_he_link": lienHeLink == null ? null : lienHeLink,
+        "career_group": careerGroup == null ? null : careerGroup,
       };
 }

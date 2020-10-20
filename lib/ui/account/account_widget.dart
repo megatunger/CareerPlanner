@@ -1,5 +1,4 @@
 import 'package:careerplanner/bloc/account/account_bloc.dart';
-import 'package:careerplanner/ui/account/edit_account_information.dart';
 import 'package:careerplanner/ui/account/edit_account_information/edit_account_form.dart';
 import 'package:careerplanner/ui/account/function_card_tile.dart';
 import 'package:careerplanner/ui/shared/loading_widget.dart';

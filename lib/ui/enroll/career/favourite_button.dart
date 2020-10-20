@@ -1,5 +1,5 @@
 import 'package:careerplanner/bloc/enroll/career/career_bloc.dart';
-import 'package:careerplanner/model/enroll/CareerObject.dart';
+import 'package:careerplanner/model/enroll/career/career_object.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 

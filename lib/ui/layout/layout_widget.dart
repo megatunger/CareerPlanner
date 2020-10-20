@@ -1,6 +1,7 @@
 import 'package:careerplanner/bloc/layout/bottom_nav_bar_bloc.dart';
 import 'package:careerplanner/ui/account/authentication_redirect.dart';
 import 'package:careerplanner/ui/enroll/enroll_widget.dart';
+import 'package:careerplanner/ui/home/home_widget.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -36,7 +37,7 @@ class _LayoutWidgetState extends State<LayoutWidget> {
         builder: (BuildContext context, AsyncSnapshot<NavBarItem> snapshot) {
           switch (snapshot.data) {
             case NavBarItem.HOME:
-              return _homeArea();
+              return HomeWidget();
             case NavBarItem.ENROLL:
               return EnrollWidget();
             case NavBarItem.ACCOUNT:
@@ -88,19 +89,6 @@ class _LayoutWidgetState extends State<LayoutWidget> {
             ),
           );
         },
-      ),
-    );
-  }
-
-  Widget _homeArea() {
-    return Center(
-      child: Text(
-        'Home Screen',
-        style: TextStyle(
-          fontWeight: FontWeight.w700,
-          color: Colors.green,
-          fontSize: 25.0,
-        ),
       ),
     );
   }

@@ -10,6 +10,8 @@ class Constants {
 
   static final shownOnboardingScreen = 'SHOWN_ONBOARDING_SCREEN';
   static final showFavButtonGuideKey = 'SHOWN_FAVOURITE_BUTTON_GUIDELINE';
+
+  static final outOfQuestions = '#out_of_questions';
 }
 
 final constants = Constants();

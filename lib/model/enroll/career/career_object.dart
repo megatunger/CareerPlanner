@@ -1,22 +1,18 @@
-// To parse this JSON data, do
-//
-//     final careerObject = careerObjectFromJson(jsonString);
-
 // SAMPLE JSON
 // {
 // "id": 1,
 // "career_name": "Tài Chính - Ngân Hàng",
 // "image_path": "https://source.unsplash.com/800x600/?financial",
 // "description": "sdfsjdflsf",
-// "career_code": "BNAK_01"
+// "career_code": "BNAK_01",
+// "career_group": "realistic"
 // }
 
+// To parse this JSON data, do
+//
+//     final careerObject = careerObjectFromJson(jsonString);
+
 import 'dart:convert';
-
-CareerObject careerObjectFromJson(String str) =>
-    CareerObject.fromJson(json.decode(str));
-
-String careerObjectToJson(CareerObject data) => json.encode(data.toJson());
 
 class CareerObject {
   CareerObject({
@@ -25,6 +21,7 @@ class CareerObject {
     this.imagePath,
     this.description,
     this.careerCode,
+    this.careerGroup,
   });
 
   int id;
@@ -32,6 +29,12 @@ class CareerObject {
   String imagePath;
   String description;
   String careerCode;
+  String careerGroup;
+
+  factory CareerObject.fromRawJson(String str) =>
+      CareerObject.fromJson(json.decode(str));
+
+  String toRawJson() => json.encode(toJson());
 
   factory CareerObject.fromJson(Map<String, dynamic> json) => CareerObject(
         id: json["id"] == null ? null : json["id"],
@@ -39,6 +42,7 @@ class CareerObject {
         imagePath: json["image_path"] == null ? null : json["image_path"],
         description: json["description"] == null ? null : json["description"],
         careerCode: json["career_code"] == null ? null : json["career_code"],
+        careerGroup: json["career_group"] == null ? null : json["career_group"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -47,5 +51,6 @@ class CareerObject {
         "image_path": imagePath == null ? null : imagePath,
         "description": description == null ? null : description,
         "career_code": careerCode == null ? null : careerCode,
+        "career_group": careerGroup == null ? null : careerGroup,
       };
 }

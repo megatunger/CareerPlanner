@@ -1,10 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:careerplanner/model/enroll/CareerObject.dart';
+import 'package:careerplanner/model/enroll/career/career_object.dart';
 import 'package:careerplanner/ui/enroll/career/favourite_button.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:animate_do/animate_do.dart';
 
 class CareerDetailHeaderWidget extends StatefulWidget {
   CareerDetailHeaderWidget({Key key, this.careerObject, this.favButtonKey})
@@ -26,9 +25,7 @@ class _CareerDetailHeaderWidgetState extends State<CareerDetailHeaderWidget> {
       backgroundColor: CareerPlannerTheme.primaryColor,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
-        stretchModes: [
-          StretchMode.zoomBackground,
-        ],
+        stretchModes: [StretchMode.zoomBackground, StretchMode.blurBackground],
         background: Stack(
           fit: StackFit.expand,
           children: [

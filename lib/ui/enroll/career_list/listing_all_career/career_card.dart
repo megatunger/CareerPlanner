@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:careerplanner/model/enroll/CareerObject.dart';
+import 'package:careerplanner/model/enroll/career/career_object.dart';
 import 'package:careerplanner/util/router.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:flutter/material.dart';
