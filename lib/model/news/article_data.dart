@@ -9,13 +9,23 @@ class NewsData {
   factory NewsData.fromSnapshot(DataSnapshot snapshot) {
     List<ArticleObject> articlesList = [];
     articlesList.clear();
-    List<dynamic> values = snapshot.value;
-    values.forEach((element) {
-      if (element != null) {
-        articlesList
-            .add(ArticleObject.fromJson(Map<String, dynamic>.from(element)));
+    if (snapshot.value != null) {
+      if (snapshot.value.runtimeType.toString() ==
+          "_InternalLinkedHashMap<dynamic, dynamic>") {
+        Map<String, dynamic>.from(snapshot.value).forEach((key, value) {
+          articlesList
+              .add(ArticleObject.fromJson(Map<String, dynamic>.from(value)));
+        });
+      } else {
+        List<dynamic> values = snapshot.value;
+        values.forEach((element) {
+          if (element != null) {
+            articlesList.add(
+                ArticleObject.fromJson(Map<String, dynamic>.from(element)));
+          }
+        });
       }
-    });
+    }
     return NewsData(articles: articlesList);
   }
 }

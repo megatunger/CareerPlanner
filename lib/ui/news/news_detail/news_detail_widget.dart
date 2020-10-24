@@ -11,60 +11,63 @@ class NewsDetailWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: CareerPlannerTheme.neutralBackground,
         body: CustomScrollView(slivers: [
-      SliverAppBar(
-        automaticallyImplyLeading: true,
-        expandedHeight: MediaQuery.of(context).size.height * 0.27,
-        stretch: true,
-        backgroundColor: CareerPlannerTheme.primaryColor,
-        pinned: true,
-        flexibleSpace: FlexibleSpaceBar(
-          stretchModes: [
-            StretchMode.zoomBackground,
-            StretchMode.blurBackground,
-          ],
-          background: Stack(
-            fit: StackFit.expand,
-            children: [
-              Positioned.fill(
-                child: ColorFiltered(
-                  colorFilter: ColorFilter.mode(
-                      Colors.black.withOpacity(0.2), BlendMode.srcOver),
-                  child: LoadingImage(
-                      url: article.imagePath,
-                      heroTag: "article_image_${article.id}"),
-                ),
-              ),
-              Align(
-                alignment: Alignment.bottomLeft,
-                child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '${article.title}',
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.headline5.copyWith(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                      ),
-                    ],
+          SliverAppBar(
+            elevation: 24,
+            automaticallyImplyLeading: true,
+            expandedHeight: MediaQuery.of(context).size.height * 0.27,
+            stretch: true,
+            backgroundColor: CareerPlannerTheme.primaryColor,
+            pinned: true,
+            flexibleSpace: FlexibleSpaceBar(
+              stretchModes: [
+                StretchMode.zoomBackground,
+                StretchMode.blurBackground,
+              ],
+              background: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Positioned.fill(
+                    child: ColorFiltered(
+                      colorFilter: ColorFilter.mode(
+                          Colors.black.withOpacity(0.2), BlendMode.srcOver),
+                      child: LoadingImage(
+                          url: article.imagePath,
+                          heroTag: "article_image_${article.id}"),
+                    ),
                   ),
-                ),
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '${article.title}',
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style:
+                                Theme.of(context).textTheme.headline5.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
-      ),
-      SliverFillRemaining(
-          child: WebViewContainer(
-        url: article.link,
-        allowFollowLink: false,
-      ))
-    ]));
+          SliverFillRemaining(
+              child: WebViewContainer(
+            url: article.link,
+            allowFollowLink: false,
+          ))
+        ]));
   }
 }

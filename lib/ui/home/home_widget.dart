@@ -1,6 +1,10 @@
+import 'package:careerplanner/ui/event/event_carousel_widget.dart';
 import 'package:careerplanner/ui/home/home_header.dart';
 import 'package:careerplanner/ui/home/home_shortcuts_widget.dart';
 import 'package:careerplanner/ui/home/quiz_card/quiz_card.dart';
+import 'package:careerplanner/ui/news/news_carousel_widget.dart';
+import 'package:careerplanner/util/constants.dart';
+import 'package:careerplanner/util/router.dart';
 import 'package:flutter/material.dart';
 
 class HomeWidget extends StatefulWidget {
@@ -28,8 +32,35 @@ class _HomeWidgetState extends State<HomeWidget> {
             HomeHeader(),
             SliverToBoxAdapter(child: QuizCard()),
             SliverToBoxAdapter(
-                child: HomeShortcutsWidget(
-              sizeOfButton: MediaQuery.of(context).size.width * .1,
+                child: Column(
+              children: [
+                HomeShortcutWidget(
+                    title: 'Tin Tức',
+                    icon: Icons.wysiwyg_rounded,
+                    callback: () {
+                      Navigator.pushNamed(context, Routes.newsListRoute);
+                    }),
+                NewsCarouselWidget(
+                    screenSize: MediaQuery.of(context).size,
+                    stream:
+                        constants.database.reference().child('news').onValue),
+              ],
+            )),
+            SliverToBoxAdapter(
+                child: Column(
+              children: [
+                HomeShortcutWidget(
+                    title: 'Sự kiện',
+                    icon: Icons.calendar_today,
+                    callback: () {
+                      Navigator.pushNamed(context, Routes.eventsListRoute);
+                    }),
+                SizedBox(height: 16),
+                EventCarouselWidget(
+                    screenSize: MediaQuery.of(context).size,
+                    stream:
+                        constants.database.reference().child('events').onValue),
+              ],
             ))
           ])),
     );

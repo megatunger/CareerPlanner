@@ -18,6 +18,10 @@ class _NewsListWidgetState extends State<NewsListWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Tin Tức'),
+        elevation: 0,
+      ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -27,50 +31,34 @@ class _NewsListWidgetState extends State<NewsListWidget> {
             fit: BoxFit.cover,
           ),
         ),
-        child: SafeArea(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      GestureDetector(
-                          onTap: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: Icon(Icons.arrow_back_ios_rounded)),
-                    ]),
-              ),
-              Expanded(
-                  child: StreamBuilder(
-                      stream: this.widget.articlesListRef.onValue,
-                      builder: (context, AsyncSnapshot<Event> snapshot) {
-                        if (snapshot.hasData) {
-                          final data =
-                              NewsData.fromSnapshot(snapshot.data.snapshot);
-                          return LiveList(
-                            showItemInterval: Duration(milliseconds: 150),
-                            showItemDuration: Duration(milliseconds: 200),
-                            padding: EdgeInsets.only(left: 8, right: 8),
-                            reAnimateOnVisibility: false,
-                            scrollDirection: Axis.vertical,
-                            itemCount: data.articles.length,
-                            itemBuilder: animationItemBuilder(
-                              (index) {
-                                final _article = data.articles[index];
-                                return NewsCard(article: _article);
-                              },
-                              padding: EdgeInsets.symmetric(vertical: 8),
-                            ),
-                          );
-                        } else {
-                          return Container(child: LoadingWidget());
-                        }
-                      })),
-            ],
-          ),
-        ),
+        child: StreamBuilder(
+            stream: this.widget.articlesListRef.onValue,
+            builder: (context, AsyncSnapshot<Event> snapshot) {
+              if (snapshot.hasData) {
+                final data = NewsData.fromSnapshot(snapshot.data.snapshot);
+                if (data.articles.length != null) {
+                  return LiveList(
+                    showItemInterval: Duration(milliseconds: 150),
+                    showItemDuration: Duration(milliseconds: 200),
+                    padding: EdgeInsets.only(left: 8, right: 8),
+                    reAnimateOnVisibility: false,
+                    scrollDirection: Axis.vertical,
+                    itemCount: data.articles.length,
+                    itemBuilder: animationItemBuilder(
+                      (index) {
+                        final _article = data.articles[index];
+                        return NewsCard(article: _article);
+                      },
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                    ),
+                  );
+                } else {
+                  return Container();
+                }
+              } else {
+                return Container(child: LoadingWidget());
+              }
+            }),
       ),
     );
   }

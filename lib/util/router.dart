@@ -1,5 +1,6 @@
 import 'package:careerplanner/model/enroll/career/career_object.dart';
 import 'package:careerplanner/model/enroll/university/university_object.dart';
+import 'package:careerplanner/model/event/event_object.dart';
 import 'package:careerplanner/model/news/article_object.dart';
 import 'package:careerplanner/ui/about_us/about_us_widget.dart';
 import 'package:careerplanner/ui/account/authentication_redirect.dart';
@@ -9,6 +10,7 @@ import 'package:careerplanner/ui/enroll/career/career_detail_widget.dart';
 import 'package:careerplanner/ui/enroll/career_list/listing_all_career.dart';
 import 'package:careerplanner/ui/enroll/university/university_detail.dart';
 import 'package:careerplanner/ui/enroll/university_list/listing_all_university.dart';
+import 'package:careerplanner/ui/event/event_detail.dart';
 import 'package:careerplanner/ui/event/event_list_widget.dart';
 import 'package:careerplanner/ui/layout/layout_widget.dart';
 import 'package:careerplanner/ui/news/news_detail/news_detail_widget.dart';
@@ -59,6 +61,9 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => QuizResults());
       case '/events/all':
         return MaterialPageRoute(builder: (_) => EventListWidget());
+      case '/events/detail':
+        var _event = settings.arguments as EventObject;
+        return MaterialPageRoute(builder: (_) => EventDetail(event: _event));
       case '/news/all':
         return MaterialPageRoute(builder: (_) => NewsListWidget());
       case '/news/detail':
@@ -91,6 +96,7 @@ class Routes {
   static const String quizQuestionsRoute = '/quiz/questions';
   static const String quizResultsRoute = '/quiz/results';
   static const String eventsListRoute = '/events/all';
+  static const String eventsDetailRoute = '/events/detail';
   static const String newsListRoute = '/news/all';
   static const String newsDetailRoute = '/news/detail';
 }

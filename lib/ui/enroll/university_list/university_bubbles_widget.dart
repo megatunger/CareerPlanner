@@ -1,13 +1,12 @@
 import 'package:careerplanner/model/enroll/university/university_data.dart';
 import 'package:careerplanner/ui/enroll/university_list/listing_all_university/university_card.dart';
-import 'package:careerplanner/util/constants.dart';
+import 'package:careerplanner/ui/shared/empty_state.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class UniversityBubblesWidget extends StatefulWidget {
-  UniversityBubblesWidget({Key key}) : super(key: key);
-  final DatabaseReference universityListRef =
-      constants.database.reference().child('university_list');
+  UniversityBubblesWidget({Key key, this.stream}) : super(key: key);
+  final Stream<Event> stream;
   @override
   _UniversityBubblesWidgetState createState() =>
       _UniversityBubblesWidgetState();
@@ -19,10 +18,13 @@ class _UniversityBubblesWidgetState extends State<UniversityBubblesWidget> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: StreamBuilder(
-          stream: this.widget.universityListRef.limitToFirst(4).onValue,
+          stream: this.widget.stream,
           builder: (context, AsyncSnapshot<Event> snapshot) {
             if (snapshot.data != null) {
               final data = UniversityData.fromSnapshot(snapshot.data.snapshot);
+              if (data.universities.isEmpty) {
+                return EmptyState();
+              }
               return GridView.extent(
                   physics: NeverScrollableScrollPhysics(),
                   scrollDirection: Axis.vertical,

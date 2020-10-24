@@ -11,15 +11,13 @@ class LoadingImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: TinyColor(CareerPlannerTheme.primaryColor).darken(20).color,
-      child: Hero(
-          tag: heroTag,
-          child: CachedNetworkImage(
-            imageUrl: url,
-            fit: BoxFit.cover,
-            progressIndicatorBuilder: (context, url, downloadProgress) =>
-                CircularProgressIndicator(value: downloadProgress.progress),
-            errorWidget: (context, url, error) => Icon(Icons.error),
-          )),
+      child: CachedNetworkImage(
+        imageUrl: url,
+        fit: BoxFit.cover,
+        progressIndicatorBuilder: (context, url, downloadProgress) =>
+            CircularProgressIndicator(value: downloadProgress.progress),
+        errorWidget: (context, url, error) => Icon(Icons.error),
+      ),
     );
   }
 }

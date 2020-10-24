@@ -1,3 +1,12 @@
+// Sample JSON
+// {
+// "id": 1,
+// "title": "sdfsdfsf",
+// "link": "sdfsdfsdf",
+// "image_path": "sdfsfds",
+// "career_group": "social"
+// }
+
 // To parse this JSON data, do
 //
 //     final articleObject = articleObjectFromJson(jsonString);

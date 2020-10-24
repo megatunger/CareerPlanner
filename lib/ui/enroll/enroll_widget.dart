@@ -3,6 +3,7 @@ import 'package:careerplanner/ui/enroll/career_list/career_list_header.dart';
 import 'package:careerplanner/ui/enroll/university_list/university_bubbles_widget.dart';
 import 'package:careerplanner/ui/enroll/university_list/university_list_header.dart';
 import 'package:careerplanner/ui/enroll/university_list/university_show_all_button.dart';
+import 'package:careerplanner/util/constants.dart';
 import 'package:flutter/material.dart';
 
 class EnrollWidget extends StatefulWidget {
@@ -34,10 +35,21 @@ class _EnrollWidgetState extends State<EnrollWidget> {
         children: [
           CareerListHeader(),
           SizedBox(height: 16),
-          CareerListCarousel(screenSize: MediaQuery.of(context).size),
+          CareerListCarousel(
+              screenSize: MediaQuery.of(context).size,
+              stream: constants.database
+                  .reference()
+                  .child('career_list')
+                  .limitToFirst(5)
+                  .onValue),
           Divider(),
           UniversityListHeader(),
-          UniversityBubblesWidget(),
+          UniversityBubblesWidget(
+              stream: constants.database
+                  .reference()
+                  .child('university_list')
+                  .limitToFirst(4)
+                  .onValue),
           UniversityShowAllButton(),
           SizedBox(height: 64)
         ],
