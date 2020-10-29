@@ -1,12 +1,13 @@
-import 'package:careerplanner/util/theme.dart';
 import 'package:flutter/material.dart';
 
 class HomeShortcutWidget extends StatelessWidget {
-  const HomeShortcutWidget({Key key, this.title, this.icon, this.callback})
+  const HomeShortcutWidget(
+      {Key key, this.title, this.icon, this.color, this.callback})
       : super(key: key);
   final String title;
   final IconData icon;
   final VoidCallback callback;
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -15,16 +16,15 @@ class HomeShortcutWidget extends StatelessWidget {
           width: double.infinity,
           child: Padding(
             padding: const EdgeInsets.only(right: 16, left: 16.0),
-            child:
-                functionCard(title: '$title', icon: icon, callback: callback),
+            child: functionCard(),
           ),
         ));
   }
 
-  Widget functionCard({String title, IconData icon, VoidCallback callback}) {
+  Widget functionCard() {
     return Card(
         elevation: 0,
-        color: CareerPlannerTheme.thirdColor,
+        color: color,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4.0),
         ),

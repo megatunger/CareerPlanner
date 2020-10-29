@@ -25,8 +25,7 @@ class _FavouriteButtonState extends State<FavouriteButton> {
           tapFavourite();
         },
         icon: StreamBuilder(
-            stream: careerBloc
-                .didFavouriteCareer(this.widget.careerObject.careerCode),
+            stream: careerBloc.didFavouriteCareer(this.widget.careerObject),
             builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
               if (snapshot.hasData) {
                 if (snapshot.data.docs.length > 0 &&
@@ -46,7 +45,6 @@ class _FavouriteButtonState extends State<FavouriteButton> {
   }
 
   void tapFavourite() async {
-    careerBloc.updateFavouriteCareer(
-        this.widget.careerObject.careerCode, !favourite);
+    careerBloc.updateFavouriteCareer(this.widget.careerObject, !favourite);
   }
 }

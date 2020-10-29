@@ -1,4 +1,8 @@
+import 'dart:collection';
+
 import 'package:careerplanner/bloc/account/account_bloc.dart';
+import 'package:careerplanner/model/enroll/career/career_group_data.dart';
+import 'package:careerplanner/model/enroll/career/career_group_object.dart';
 import 'package:careerplanner/model/quiz/question_object.dart';
 import 'package:careerplanner/model/quiz/questions_data.dart';
 import 'package:careerplanner/util/constants.dart';
@@ -10,6 +14,8 @@ class QuizBloc {
   FirebaseFirestore _fireStore = FirebaseFirestore.instance;
   final BehaviorSubject<QuestionObject> _questionSubject =
       BehaviorSubject<QuestionObject>();
+  final BehaviorSubject<CareerGroupObject> _careerGroupSubject =
+      BehaviorSubject<CareerGroupObject>();
   final DatabaseReference careerQuizRef =
       constants.database.reference().child('career_quiz');
 
@@ -64,11 +70,47 @@ class QuizBloc {
     });
   }
 
+  count() async {
+    HashMap<String, int> map = HashMap<String, int>();
+    final dbRef =
+        await constants.database.reference().child('career_group').once();
+    final careerGroupData = CareerGroupData.fromSnapshot(dbRef);
+    careerGroupData.careerGroups.forEach((element) {
+      map.putIfAbsent(element.groupCode, () => 0);
+    });
+    final quizAnsweredData = await _fireStore
+        .collection("users")
+        .doc(accountBloc.currentUser().uid)
+        .collection('quiz_answers')
+        .get();
+    quizAnsweredData.docs.forEach((element) {
+      map.update(
+          element["career_group"], (value) => value + element["stars"].toInt());
+    });
+    final careerFavouriteData = await _fireStore
+        .collection("users")
+        .doc(accountBloc.currentUser().uid)
+        .collection('user_careers')
+        .get();
+    careerFavouriteData.docs.forEach((element) {
+      map.update(element["career_group"], (value) => value + 5);
+    });
+    final sorted =
+        SplayTreeMap.from(map, (key1, key2) => map[key1].compareTo(map[key2]));
+    print(sorted);
+    final lastResult = careerGroupData.careerGroups
+        .firstWhere((element) => element.groupCode == sorted.lastKey());
+    _careerGroupSubject.sink.add(lastResult);
+  }
+
   dispose() {
     _questionSubject.close();
+    _careerGroupSubject.close();
   }
 
   BehaviorSubject<QuestionObject> get questionSubject => _questionSubject;
+  BehaviorSubject<CareerGroupObject> get careerGroupSubject =>
+      _careerGroupSubject;
 }
 
 final quizBloc = QuizBloc();

@@ -5,6 +5,7 @@ import 'package:careerplanner/ui/home/quiz_card/quiz_card.dart';
 import 'package:careerplanner/ui/news/news_carousel_widget.dart';
 import 'package:careerplanner/util/constants.dart';
 import 'package:careerplanner/util/router.dart';
+import 'package:careerplanner/util/theme.dart';
 import 'package:flutter/material.dart';
 
 class HomeWidget extends StatefulWidget {
@@ -33,33 +34,71 @@ class _HomeWidgetState extends State<HomeWidget> {
             SliverToBoxAdapter(child: QuizCard()),
             SliverToBoxAdapter(
                 child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                HomeShortcutWidget(
-                    title: 'Tin Tức',
-                    icon: Icons.wysiwyg_rounded,
-                    callback: () {
-                      Navigator.pushNamed(context, Routes.newsListRoute);
-                    }),
+                Divider(height: 8),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 16),
+                  child: Text(
+                    'Tin tức nổi bật',
+                    style: Theme.of(context).textTheme.headline6.copyWith(
+                        color: CareerPlannerTheme.primaryColor,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
                 NewsCarouselWidget(
                     screenSize: MediaQuery.of(context).size,
                     stream:
                         constants.database.reference().child('news').onValue),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  child: HomeShortcutWidget(
+                      title: 'Tin Tức',
+                      icon: Icons.wysiwyg_rounded,
+                      color: CareerPlannerTheme.thirdColor,
+                      callback: () {
+                        Navigator.pushNamed(context, Routes.newsListRoute);
+                      }),
+                ),
               ],
             )),
             SliverToBoxAdapter(
                 child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                HomeShortcutWidget(
-                    title: 'Sự kiện',
-                    icon: Icons.calendar_today,
-                    callback: () {
-                      Navigator.pushNamed(context, Routes.eventsListRoute);
-                    }),
+                Divider(height: 8),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 16),
+                  child: Text(
+                    'Sự kiện nổi bật',
+                    style: Theme.of(context).textTheme.headline6.copyWith(
+                        color: CareerPlannerTheme.primaryColor,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
                 SizedBox(height: 16),
                 EventCarouselWidget(
                     screenSize: MediaQuery.of(context).size,
                     stream:
                         constants.database.reference().child('events').onValue),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  child: HomeShortcutWidget(
+                      title: 'Sự kiện',
+                      icon: Icons.calendar_today,
+                      color: CareerPlannerTheme.thirdColor,
+                      callback: () {
+                        Navigator.pushNamed(context, Routes.eventsListRoute);
+                      }),
+                ),
               ],
             ))
           ])),

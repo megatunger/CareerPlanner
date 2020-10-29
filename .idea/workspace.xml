@@ -8,38 +8,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a5f251-40b1-43af-94ef-0d973c256735" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/bloc/event/event_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/model/event/event_data.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/model/event/event_object.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/event/event_card.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/event/event_carousel_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/event/event_detail.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/event/event_detail/event_detail_card_info.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/event/event_detail/event_info_card.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/event/event_detail/register_event_button.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/news/news_carousel_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/shared/empty_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/util/app_util.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/model/account/account_object.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/model/account/mentor_object.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/model/enroll/career/career_group_data.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/model/enroll/career/career_group_object.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/account/account_type/register_form_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/account/existed_mentor_account.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/account/existed_student_account.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/account/phone_verify/phone_verify_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/account/student/result_card_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/account/welcome_new_account.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/connect/connect_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/connect/mentor/connect_mentor_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/connect/mentor/listing_threads_mentor_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/connect/mentor/mentor_information_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/connect/student/connect_student_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/connect/thread/create_thread.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/quiz/quiz_results/quiz_result_body.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/quiz/quiz_results/quiz_result_did_not_finished.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/quiz/quiz_results/quiz_result_header.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/rewards/rewards_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerplanner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/careerplanner.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Flutter/.last_build_id" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/.last_build_id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/enroll/career/career_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/enroll/career/career_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/enroll/university/university_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/enroll/university/university_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/news/article_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/news/article_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/news/article_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/news/article_object.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/enroll/career/career_detail_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enroll/career/career_detail_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/enroll/career_list/career_list_carousel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enroll/career_list/career_list_carousel.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/enroll/enroll_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enroll/enroll_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/enroll/university_list/university_bubbles_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enroll/university_list/university_bubbles_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/event/event_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/event/event_list_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bloc/account/account_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bloc/account/account_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bloc/enroll/career/career_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bloc/enroll/career/career_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bloc/event/event_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bloc/event/event_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bloc/layout/bottom_nav_bar_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bloc/layout/bottom_nav_bar_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bloc/quiz/quiz_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bloc/quiz/quiz_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/model/account/account.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/account/account_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/account/authentication_redirect.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/account/authentication_redirect.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/account/edit_account_information.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/account/edit_account_information/edit_account_form.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/account/function_card_tile.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/account/login/login_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/account/login/phone_login_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/enroll/career/favourite_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enroll/career/favourite_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/event/event_carousel_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/event/event_carousel_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/event/event_detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/event/event_detail.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/event/event_detail/register_event_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/event/event_detail/register_event_button.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/ui/home/home_shortcuts_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/home/home_shortcuts_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/ui/home/home_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/home/home_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/news/news_detail/news_detail_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/news/news_detail/news_detail_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/news/news_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/news/news_list_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/shared/loading_image.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/shared/loading_image.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/layout/layout_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/layout/layout_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/quiz/question/question_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/quiz/question/question_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/quiz/quiz_results.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/quiz/quiz_results.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/splash/onboarding_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/splash/onboarding_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/startup_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/startup_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/util/router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/router.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/util/theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/theme.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,8 +76,8 @@
       <list>
         <option value="Kotlin Class" />
         <option value="stateless_widget" />
-        <option value="stateful_widget" />
         <option value="Dart File" />
+        <option value="stateful_widget" />
       </list>
     </option>
   </component>
@@ -77,18 +101,19 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lib/ui/news/news_detail" />
-      <recent name="$PROJECT_DIR$/lib/model/enroll/career" />
-      <recent name="$PROJECT_DIR$/lib/model/enroll/university" />
-      <recent name="$PROJECT_DIR$/android/app" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/illustrations" />
       <recent name="$PROJECT_DIR$/assets/icon" />
       <recent name="$PROJECT_DIR$/lib/ui/account" />
       <recent name="$PROJECT_DIR$/lib/bloc" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/ui/account/phone_verify" />
+      <recent name="$PROJECT_DIR$/lib/ui/quiz/quiz_results" />
+      <recent name="$PROJECT_DIR$/lib/ui/news/news_detail" />
+      <recent name="$PROJECT_DIR$/lib/model/enroll/career" />
+      <recent name="$PROJECT_DIR$/lib/model/enroll/university" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -110,53 +135,57 @@
     </state>
     <state x="621" y="466" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/-864.1080.1280.800/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601091931106" />
     <state x="466" y="388" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1440.900@0.0.1440.900" timestamp="1601553250421" />
-    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602918278621">
+    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603811060525">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1602918278621" />
+    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1603811060525" />
     <state x="335" y="0" key="CommitChangelistDialog2" timestamp="1602479830375">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="335" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1602479830375" />
-    <state width="1398" height="151" key="GridCell.Tab.0.bottom" timestamp="1603530792260">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1878" height="330" key="GridCell.Tab.0.bottom" timestamp="1603952304719">
+      <screen x="0" y="23" width="1920" height="991" />
     </state>
     <state width="1878" height="216" key="GridCell.Tab.0.bottom/-1280.280.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1601448738848" />
     <state width="1878" height="244" key="GridCell.Tab.0.bottom/-1280.303.1280.777/0.23.1920.1000@0.23.1920.1000" timestamp="1601519145210" />
-    <state width="1878" height="215" key="GridCell.Tab.0.bottom/-864.1080.1280.800/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601093398985" />
-    <state width="1398" height="151" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603530792260" />
-    <state width="1398" height="250" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1603171411050" />
+    <state width="1878" height="277" key="GridCell.Tab.0.bottom/-864.1080.1280.800/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1603558493157" />
+    <state width="1398" height="330" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603899032451" />
+    <state width="1398" height="153" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1603812990935" />
     <state width="1396" height="247" key="GridCell.Tab.0.bottom/0.23.1440.820@0.23.1440.820" timestamp="1601711033010" />
+    <state width="1878" height="330" key="GridCell.Tab.0.bottom/0.23.1920.991@0.23.1920.991" timestamp="1603952304719" />
     <state width="1544" height="280" key="GridCell.Tab.0.bottom/0.23.1920.999@0.23.1920.999" timestamp="1602742014535" />
-    <state width="1398" height="151" key="GridCell.Tab.0.center" timestamp="1603530792256">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1878" height="330" key="GridCell.Tab.0.center" timestamp="1603952304718">
+      <screen x="0" y="23" width="1920" height="991" />
     </state>
     <state width="1878" height="216" key="GridCell.Tab.0.center/-1280.280.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1601448738845" />
     <state width="1878" height="244" key="GridCell.Tab.0.center/-1280.303.1280.777/0.23.1920.1000@0.23.1920.1000" timestamp="1601519145208" />
-    <state width="1878" height="215" key="GridCell.Tab.0.center/-864.1080.1280.800/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601093398979" />
-    <state width="1398" height="151" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603530792256" />
-    <state width="1398" height="250" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1603171411040" />
+    <state width="1878" height="277" key="GridCell.Tab.0.center/-864.1080.1280.800/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1603558493153" />
+    <state width="1398" height="330" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603899032450" />
+    <state width="1398" height="153" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1603812990929" />
     <state width="1396" height="247" key="GridCell.Tab.0.center/0.23.1440.820@0.23.1440.820" timestamp="1601711033009" />
+    <state width="1878" height="330" key="GridCell.Tab.0.center/0.23.1920.991@0.23.1920.991" timestamp="1603952304718" />
     <state width="1544" height="280" key="GridCell.Tab.0.center/0.23.1920.999@0.23.1920.999" timestamp="1602742014534" />
-    <state width="1398" height="151" key="GridCell.Tab.0.left" timestamp="1603530792251">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1878" height="330" key="GridCell.Tab.0.left" timestamp="1603952304717">
+      <screen x="0" y="23" width="1920" height="991" />
     </state>
     <state width="1878" height="216" key="GridCell.Tab.0.left/-1280.280.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1601448738843" />
     <state width="1878" height="244" key="GridCell.Tab.0.left/-1280.303.1280.777/0.23.1920.1000@0.23.1920.1000" timestamp="1601519145206" />
-    <state width="1878" height="215" key="GridCell.Tab.0.left/-864.1080.1280.800/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601093398978" />
-    <state width="1398" height="151" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603530792251" />
-    <state width="1398" height="250" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1603171411039" />
+    <state width="1878" height="277" key="GridCell.Tab.0.left/-864.1080.1280.800/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1603558493151" />
+    <state width="1398" height="330" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603899032448" />
+    <state width="1398" height="153" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1603812990926" />
     <state width="1396" height="247" key="GridCell.Tab.0.left/0.23.1440.820@0.23.1440.820" timestamp="1601711033009" />
+    <state width="1878" height="330" key="GridCell.Tab.0.left/0.23.1920.991@0.23.1920.991" timestamp="1603952304717" />
     <state width="1544" height="280" key="GridCell.Tab.0.left/0.23.1920.999@0.23.1920.999" timestamp="1602742014533" />
-    <state width="1398" height="151" key="GridCell.Tab.0.right" timestamp="1603530792257">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1878" height="330" key="GridCell.Tab.0.right" timestamp="1603952304718">
+      <screen x="0" y="23" width="1920" height="991" />
     </state>
     <state width="1878" height="216" key="GridCell.Tab.0.right/-1280.280.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1601448738846" />
     <state width="1878" height="244" key="GridCell.Tab.0.right/-1280.303.1280.777/0.23.1920.1000@0.23.1920.1000" timestamp="1601519145209" />
-    <state width="1878" height="215" key="GridCell.Tab.0.right/-864.1080.1280.800/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601093398981" />
-    <state width="1398" height="151" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603530792257" />
-    <state width="1398" height="250" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1603171411042" />
+    <state width="1878" height="277" key="GridCell.Tab.0.right/-864.1080.1280.800/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1603558493155" />
+    <state width="1398" height="330" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603899032451" />
+    <state width="1398" height="153" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1603812990935" />
     <state width="1396" height="247" key="GridCell.Tab.0.right/0.23.1440.820@0.23.1440.820" timestamp="1601711033010" />
+    <state width="1878" height="330" key="GridCell.Tab.0.right/0.23.1920.991@0.23.1920.991" timestamp="1603952304718" />
     <state width="1544" height="280" key="GridCell.Tab.0.right/0.23.1920.999@0.23.1920.999" timestamp="1602742014534" />
     <state x="186" y="23" width="1920" height="936" key="SettingsEditor" timestamp="1603522442903">
       <screen x="0" y="0" width="1440" height="900" />
@@ -173,21 +202,21 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="500" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1601470240068" />
-    <state x="459" y="146" width="932" height="608" key="find.popup" timestamp="1603534125422">
+    <state x="459" y="146" width="932" height="608" key="find.popup" timestamp="1603890668788">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="612" y="175" width="968" height="729" key="find.popup/-1280.280.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1601445110501" />
-    <state x="459" y="146" width="932" height="608" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1603534125422" />
-    <state x="385" y="210" key="run.anything.popup" timestamp="1603531450617">
+    <state x="459" y="146" width="932" height="608" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1603890668788" />
+    <state x="385" y="210" key="run.anything.popup" timestamp="1603718281750">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1603531450617" />
-    <state x="385" y="196" width="672" height="676" key="search.everywhere.popup" timestamp="1603533936703">
+    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1603718281750" />
+    <state x="385" y="196" width="672" height="676" key="search.everywhere.popup" timestamp="1603898317569">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="513" y="235" width="894" height="812" key="search.everywhere.popup/-1280.280.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1601448882669" />
     <state x="513" y="235" width="894" height="812" key="search.everywhere.popup/-864.1080.1280.800/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601091518313" />
-    <state x="385" y="196" width="672" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1603533936703" />
+    <state x="385" y="196" width="672" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1603898317569" />
     <state x="385" y="200" width="672" height="610" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1603113729012" />
   </component>
 </project>

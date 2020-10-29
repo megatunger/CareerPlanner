@@ -3,9 +3,9 @@ import 'package:careerplanner/model/enroll/university/university_object.dart';
 import 'package:careerplanner/model/event/event_object.dart';
 import 'package:careerplanner/model/news/article_object.dart';
 import 'package:careerplanner/ui/about_us/about_us_widget.dart';
+import 'package:careerplanner/ui/account/account_type/register_form_widget.dart';
 import 'package:careerplanner/ui/account/authentication_redirect.dart';
-import 'package:careerplanner/ui/account/edit_account_information.dart';
-import 'package:careerplanner/ui/account/login/phone_login_widget.dart';
+import 'package:careerplanner/ui/connect/thread/create_thread.dart';
 import 'package:careerplanner/ui/enroll/career/career_detail_widget.dart';
 import 'package:careerplanner/ui/enroll/career_list/listing_all_career.dart';
 import 'package:careerplanner/ui/enroll/university/university_detail.dart';
@@ -18,6 +18,7 @@ import 'package:careerplanner/ui/news/news_list_widget.dart';
 import 'package:careerplanner/ui/quiz/question_showing_widget.dart';
 import 'package:careerplanner/ui/quiz/quiz_career_widget.dart';
 import 'package:careerplanner/ui/quiz/quiz_results.dart';
+import 'package:careerplanner/ui/rewards/rewards_widget.dart';
 import 'package:careerplanner/ui/splash/onboarding_widget.dart';
 import 'package:careerplanner/ui/startup_widget.dart';
 import 'package:flutter/material.dart';
@@ -33,10 +34,10 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => LayoutWidget());
       case '/authenticate':
         return MaterialPageRoute(builder: (_) => AuthenticationRedirect());
-      case '/loginByPhone':
-        return MaterialPageRoute(builder: (_) => PhoneLoginWidget());
-      case '/editAccount':
-        return MaterialPageRoute(builder: (_) => EditAccountInformation());
+      case '/authenticate/register':
+        var _accountType = settings.arguments as String;
+        return MaterialPageRoute(
+            builder: (_) => RegisterFormWidget(accountType: _accountType));
       case '/aboutUs':
         return MaterialPageRoute(builder: (_) => AboutUsWidget());
       case '/career/detail':
@@ -70,6 +71,10 @@ class AppRouter {
         var _article = settings.arguments as ArticleObject;
         return MaterialPageRoute(
             builder: (_) => NewsDetailWidget(article: _article));
+      case '/rewards':
+        return MaterialPageRoute(builder: (_) => RewardsWidget());
+      case '/connect/thread/new':
+        return MaterialPageRoute(builder: (_) => CreateThread());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
@@ -85,8 +90,7 @@ class Routes {
   static const String onBoardingRoute = '/onBoarding';
   static const String homeRoute = '/';
   static const String authenticateRoute = '/authenticate';
-  static const String phoneLoginRoute = '/loginByPhone';
-  static const String editAccountRoute = '/editAccount';
+  static const String registerRoute = '/authenticate/register';
   static const String aboutUsRoute = '/aboutUs';
   static const String careerDetailRoute = '/career/detail';
   static const String careerAllRoute = '/career/all';
@@ -99,4 +103,6 @@ class Routes {
   static const String eventsDetailRoute = '/events/detail';
   static const String newsListRoute = '/news/all';
   static const String newsDetailRoute = '/news/detail';
+  static const String rewardsRoute = '/rewards';
+  static const String connectNewThreadRoute = '/connect/thread/new';
 }

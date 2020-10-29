@@ -8,7 +8,9 @@
     <application
         android:name=".Application"
         android:label="careerplanner"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:requestLegacyExternalStorage="true"
+        >
         <meta-data
             android:name="io.sentry.dsn"
             android:value="https://1c7798597c8b44878c2b81428b742908@o353025.ingest.sentry.io/5440168" />

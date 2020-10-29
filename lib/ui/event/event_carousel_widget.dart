@@ -27,10 +27,11 @@ class _EventCarouselWidgetState extends State<EventCarouselWidget> {
             }
             return CarouselSlider(
               options: CarouselOptions(
+                enlargeCenterPage: true,
                 height: this.widget.screenSize.height * 0.3,
                 enableInfiniteScroll: true,
                 reverse: false,
-                autoPlay: false,
+                autoPlay: true,
                 autoPlayInterval: Duration(seconds: 3),
                 autoPlayAnimationDuration: Duration(milliseconds: 800),
                 autoPlayCurve: Curves.fastOutSlowIn,

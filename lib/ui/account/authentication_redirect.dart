@@ -1,7 +1,10 @@
-import 'package:careerplanner/ui/account/account_widget.dart';
-import 'package:careerplanner/ui/account/login/login_widget.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:careerplanner/bloc/account/account_bloc.dart';
+import 'package:careerplanner/ui/account/existed_mentor_account.dart';
+import 'package:careerplanner/ui/account/welcome_new_account.dart';
+import 'package:careerplanner/ui/shared/loading_widget.dart';
 import 'package:flutter/material.dart';
+
+import 'existed_student_account.dart';
 
 class AuthenticationRedirect extends StatefulWidget {
   AuthenticationRedirect({Key key}) : super(key: key);
@@ -12,34 +15,36 @@ class AuthenticationRedirect extends StatefulWidget {
 
 class _AuthenticationRedirectState extends State<AuthenticationRedirect> {
   @override
+  void initState() {
+    accountBloc.checkUser();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Tài Khoản"),
-          automaticallyImplyLeading: false,
-        ),
-        body: StreamBuilder(
-          stream: FirebaseAuth.instance.authStateChanges(),
-          builder: (_, snap) {
-            Widget _widget;
-            if (snap.connectionState == ConnectionState.active) {
-              if (snap.data == null) {
-                _widget = LoginWidget();
-              } else {
-                return AccountWidget();
-              }
-            } else {
-              _widget = CircularProgressIndicator();
+        body: Container(
+      child: StreamBuilder<String>(
+        stream: accountBloc.accountRedirectSubject.stream,
+        builder: (context, AsyncSnapshot<String> snapshot) {
+          if (snapshot.hasData) {
+            if (snapshot.data == 'new_account') {
+              return WelcomeNewAccount();
             }
-            return AnimatedSwitcher(
-                duration: const Duration(milliseconds: 750),
-                switchInCurve: Curves.easeInOutQuart,
-                switchOutCurve: Curves.easeInOutQuart,
-                transitionBuilder: (Widget child, Animation<double> animation) {
-                  return ScaleTransition(child: child, scale: animation);
-                },
-                child: _widget);
-          },
-        ));
+            if (snapshot.data == 'existed_account') {
+              if (accountBloc.accountSubject.value.accountType == 'student') {
+                return ExistedStudentAccount();
+              }
+              if (accountBloc.accountSubject.value.accountType == 'mentor') {
+                return ExistedMentorAccount();
+              }
+              return Container();
+            }
+            return Text('Unhandled message: ${snapshot.data}');
+          }
+          return LoadingWidget();
+        },
+      ),
+    ));
   }
 }

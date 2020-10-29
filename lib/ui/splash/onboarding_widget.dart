@@ -1,8 +1,10 @@
+import 'package:careerplanner/bloc/account/account_bloc.dart';
 import 'package:careerplanner/util/constants.dart';
 import 'package:careerplanner/util/router.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svprogresshud/flutter_svprogresshud.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -25,6 +27,12 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
         alignment: Alignment.center,
       ),
     ));
+  }
+
+  @override
+  void initState() {
+    FirebaseAuth.instance.signOut();
+    super.initState();
   }
 
   @override
@@ -127,10 +135,14 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
 
   void saveShownOnboarding() async {
     print('End of onboarding');
-    FirebaseAuth.instance.signInAnonymously();
-    await SharedPreferences.getInstance().then((value) {
-      value.setBool(Constants.shownOnboardingScreen, true);
-      Navigator.pushReplacementNamed(context, Routes.homeRoute);
+    SVProgressHUD.show('');
+    FirebaseAuth.instance.signInAnonymously().then((value) async {
+      await SharedPreferences.getInstance().then((value) {
+        value.setBool(Constants.shownOnboardingScreen, true);
+        accountBloc.createNewCollection();
+        Navigator.pushReplacementNamed(context, Routes.homeRoute);
+        SVProgressHUD.dismissWithDelay(1500);
+      });
     });
   }
 }

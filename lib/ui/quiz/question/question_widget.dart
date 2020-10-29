@@ -65,7 +65,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                   ),
                   SizedBox(height: 16),
                   Text(
-                      '0 điểm: Bạn thấy nhận định hoàn toàn không đúng\n1 điểm: Nhận định đúng trong một số trường hợp\n2 điểm: Nhận định đúng 50%\n3 điểm: Nhận định đúng khoảng 80 – 90%\n4 điểm: Nhận định hoàn toàn đúng',
+                      '1 điểm: Bạn thấy nhận định hoàn toàn không đúng\n2 điểm: Nhận định đúng trong một số trường hợp\n3 điểm: Nhận định đúng 50%\n4 điểm: Nhận định đúng khoảng 80 – 90%\n5 điểm: Nhận định hoàn toàn đúng',
                       style: Theme.of(context).textTheme.caption)
                 ],
               ),

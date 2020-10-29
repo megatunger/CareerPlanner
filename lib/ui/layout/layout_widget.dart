@@ -1,5 +1,6 @@
 import 'package:careerplanner/bloc/layout/bottom_nav_bar_bloc.dart';
 import 'package:careerplanner/ui/account/authentication_redirect.dart';
+import 'package:careerplanner/ui/connect/connect_widget.dart';
 import 'package:careerplanner/ui/enroll/enroll_widget.dart';
 import 'package:careerplanner/ui/home/home_widget.dart';
 import 'package:careerplanner/util/theme.dart';
@@ -40,6 +41,8 @@ class _LayoutWidgetState extends State<LayoutWidget> {
               return HomeWidget();
             case NavBarItem.ENROLL:
               return EnrollWidget();
+            case NavBarItem.CONNECT:
+              return ConnectWidget();
             case NavBarItem.ACCOUNT:
               return AuthenticationRedirect();
             default:
@@ -58,12 +61,12 @@ class _LayoutWidgetState extends State<LayoutWidget> {
             child: SafeArea(
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
                 child: GNav(
                     gap: 8,
                     activeColor: Colors.white,
                     iconSize: 24,
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 5),
                     duration: Duration(milliseconds: 250),
                     tabBackgroundColor: CareerPlannerTheme.primaryColor,
                     tabs: [
@@ -78,9 +81,14 @@ class _LayoutWidgetState extends State<LayoutWidget> {
                         text: 'Tuyển Sinh',
                       ),
                       GButton(
+                        icon: Icons.people,
+                        iconColor: CareerPlannerTheme.primaryColor,
+                        text: 'Kết nối',
+                      ),
+                      GButton(
                         icon: Icons.account_circle,
                         iconColor: CareerPlannerTheme.primaryColor,
-                        text: 'Tài Khoản',
+                        text: 'Cá Nhân',
                       ),
                     ],
                     selectedIndex: snapshot.data.index,
