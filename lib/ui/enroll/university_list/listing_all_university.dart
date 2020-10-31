@@ -22,58 +22,63 @@ class _ListingAllUniversityState extends State<ListingAllUniversity> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          FlatButton.icon(
-            icon: Icon(Icons.arrow_back_ios_rounded),
-            label: Text('Quay lại'),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-          Container(
-            width: double.infinity,
-            height: 64,
-            child: Padding(
-              padding: EdgeInsets.only(left: 32, right: 32, top: 8, bottom: 8),
-              child: FlatButton.icon(
-                icon: Icon(Icons.search_rounded),
-                label: Text('Tìm tên trường'),
-                color: Colors.grey.shade200,
-                onPressed: () {
-                  showSearchScreen();
-                },
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0),
+      child: ListView(children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            FlatButton.icon(
+              icon: Icon(Icons.arrow_back_ios_rounded),
+              label: Text('Quay lại'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            Container(
+              width: double.infinity,
+              height: 64,
+              child: Padding(
+                padding:
+                    EdgeInsets.only(left: 32, right: 32, top: 8, bottom: 8),
+                child: FlatButton.icon(
+                  icon: Icon(Icons.search_rounded),
+                  label: Text('Tìm tên trường'),
+                  color: Colors.grey.shade200,
+                  onPressed: () {
+                    showSearchScreen();
+                  },
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: StreamBuilder(
-                stream: this.widget.universityListRef.onValue,
-                builder: (context, AsyncSnapshot<Event> snapshot) {
-                  if (snapshot.data != null) {
-                    data = UniversityData.fromSnapshot(snapshot.data.snapshot);
-                    return GridView.extent(
-                        physics: NeverScrollableScrollPhysics(),
-                        scrollDirection: Axis.vertical,
-                        shrinkWrap: true,
-                        maxCrossAxisExtent: MediaQuery.of(context).size.width *
-                            0.5, // maximum pixel width of a item
-                        padding: const EdgeInsets.all(4.0),
-                        mainAxisSpacing: 4.0,
-                        crossAxisSpacing: 4.0,
-                        children: _buildGridTileList(data));
-                  } else {
-                    return LinearProgressIndicator();
-                  }
-                }),
-          )
-        ],
-      ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: StreamBuilder(
+                  stream: this.widget.universityListRef.onValue,
+                  builder: (context, AsyncSnapshot<Event> snapshot) {
+                    if (snapshot.data != null) {
+                      data =
+                          UniversityData.fromSnapshot(snapshot.data.snapshot);
+                      return GridView.extent(
+                          physics: NeverScrollableScrollPhysics(),
+                          scrollDirection: Axis.vertical,
+                          shrinkWrap: true,
+                          maxCrossAxisExtent:
+                              MediaQuery.of(context).size.width *
+                                  0.5, // maximum pixel width of a item
+                          padding: const EdgeInsets.all(4.0),
+                          mainAxisSpacing: 4.0,
+                          crossAxisSpacing: 4.0,
+                          children: _buildGridTileList(data));
+                    } else {
+                      return LinearProgressIndicator();
+                    }
+                  }),
+            )
+          ],
+        )
+      ]),
     ));
   }
 

@@ -1,19 +1,17 @@
 import 'package:careerplanner/bloc/account/account_bloc.dart';
-import 'package:careerplanner/model/account/account_object.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_svprogresshud/flutter_svprogresshud.dart';
 
-class PhoneVerifyWidget extends StatefulWidget {
-  PhoneVerifyWidget({Key key, this.account}) : super(key: key);
-  final AccountObject account;
-
+class PhoneLoginWidget extends StatefulWidget {
+  PhoneLoginWidget({Key key, this.phoneNumber}) : super(key: key);
+  String phoneNumber;
   @override
-  _PhoneVerifyWidgetState createState() => _PhoneVerifyWidgetState();
+  _PhoneLoginWidgetState createState() => _PhoneLoginWidgetState();
 }
 
-class _PhoneVerifyWidgetState extends State<PhoneVerifyWidget> {
+class _PhoneLoginWidgetState extends State<PhoneLoginWidget> {
   final firebaseAuth = FirebaseAuth.instance;
   final GlobalKey<FormBuilderState> _fbKey = GlobalKey<FormBuilderState>();
   String message =
@@ -25,7 +23,7 @@ class _PhoneVerifyWidgetState extends State<PhoneVerifyWidget> {
   @override
   void initState() {
     firebaseAuth.verifyPhoneNumber(
-        phoneNumber: this.widget.account.phone,
+        phoneNumber: this.widget.phoneNumber,
         timeout: Duration(seconds: 120),
         verificationCompleted: (credential) {},
         verificationFailed: (FirebaseAuthException exception) {
@@ -104,9 +102,10 @@ class _PhoneVerifyWidgetState extends State<PhoneVerifyWidget> {
     SVProgressHUD.show(status: '');
     final _authCredential =
         PhoneAuthProvider.credential(verificationId: actualCode, smsCode: otp);
-    await firebaseAuth.currentUser.updatePhoneNumber(_authCredential);
-    await accountBloc.mirrorToFirestore(account: this.widget.account);
+    await firebaseAuth.signInWithCredential(_authCredential);
+    accountBloc.accountRedirectSubject.sink.add(null);
     await accountBloc.checkUser();
+    await accountBloc.getCurrentInformation();
     SVProgressHUD.dismiss(delay: Duration(milliseconds: 500));
     Navigator.pop(context);
     Navigator.pop(context);

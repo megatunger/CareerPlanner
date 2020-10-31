@@ -5,8 +5,8 @@ import 'package:careerplanner/ui/connect/mentor/mentor_information_widget.dart';
 import 'package:flutter/material.dart';
 
 class ConnectMentorWidget extends StatefulWidget {
-  ConnectMentorWidget({Key key}) : super(key: key);
-
+  ConnectMentorWidget({Key key, this.mentorUid}) : super(key: key);
+  final String mentorUid;
   @override
   _ConnectMentorWidgetState createState() => _ConnectMentorWidgetState();
 }
@@ -14,7 +14,11 @@ class ConnectMentorWidget extends StatefulWidget {
 class _ConnectMentorWidgetState extends State<ConnectMentorWidget> {
   @override
   void initState() {
-    accountBloc.checkMentor();
+    if (this.widget.mentorUid != null) {
+      accountBloc.checkMentor(this.widget.mentorUid);
+    } else {
+      accountBloc.checkMentor(accountBloc.currentUser().uid);
+    }
     super.initState();
   }
 
@@ -25,7 +29,7 @@ class _ConnectMentorWidgetState extends State<ConnectMentorWidget> {
       builder: (BuildContext context, AsyncSnapshot<MentorObject> snapshot) {
         if (snapshot.hasData) {
           final mentor = snapshot.data;
-          if (mentor.verify != 'verified') {
+          if (mentor.verify != 'x') {
             return unverifiedAccountWidget();
           } else {
             return ListView(children: [
@@ -34,18 +38,20 @@ class _ConnectMentorWidgetState extends State<ConnectMentorWidget> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
                   children: [
                     MentorInformationWidget(mentor: mentor),
                     SizedBox(height: 54),
-                    ListingThreadsMentorWidget(mentor: mentor)
+                    ListingThreadsMentorWidget(mentor: mentor),
                   ],
                 ),
               ),
             ]);
           }
-          return Container();
         }
-        return Center(child: CircularProgressIndicator());
+        return Scaffold(
+          body: Center(child: CircularProgressIndicator())
+        );
       },
     );
   }
@@ -66,5 +72,11 @@ class _ConnectMentorWidgetState extends State<ConnectMentorWidget> {
         Spacer(),
       ]),
     ));
+  }
+
+  @override
+  void dispose() {
+    accountBloc.mentorAccountSubject.sink.add(null);
+    super.dispose();
   }
 }

@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(FLUTTER_BUILD_NAME)</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -35,14 +35,14 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>SentryDSN</key>
-	<string>https://1c7798597c8b44878c2b81428b742908@o353025.ingest.sentry.io/5440168</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Ứng dụng cần truy cập thư viện ảnh để giúp bạn tải ảnh lên khi kết nối chuyên gia.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Ứng dụng cần truy cập máy ảnh để giúp bạn chụp ảnh và gửi cho chuyên gia.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Ứng dụng cần truy cập ghi âm để thu tiếng cho video</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Ứng dụng cần truy cập thư viện ảnh để giúp bạn tải ảnh lên khi kết nối chuyên gia.</string>
+	<key>SentryDSN</key>
+	<string>https://1c7798597c8b44878c2b81428b742908@o353025.ingest.sentry.io/5440168</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -57,8 +57,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

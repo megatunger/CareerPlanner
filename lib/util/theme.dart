@@ -11,4 +11,6 @@ class CareerPlannerTheme {
   static const redColor = Color(0xFFFFADAD);
   static const yellowColor = Color(0xFFFFDA55);
   static const greenColor = Color(0xFF6ADFB5);
+
+  static const randomColors = [blueColor, redColor, greenColor];
 }

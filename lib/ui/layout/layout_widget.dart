@@ -1,6 +1,6 @@
 import 'package:careerplanner/bloc/layout/bottom_nav_bar_bloc.dart';
 import 'package:careerplanner/ui/account/authentication_redirect.dart';
-import 'package:careerplanner/ui/connect/connect_widget.dart';
+import 'package:careerplanner/ui/connect/mentor/mentor_account_type_redirect.dart';
 import 'package:careerplanner/ui/enroll/enroll_widget.dart';
 import 'package:careerplanner/ui/home/home_widget.dart';
 import 'package:careerplanner/util/theme.dart';
@@ -42,7 +42,7 @@ class _LayoutWidgetState extends State<LayoutWidget> {
             case NavBarItem.ENROLL:
               return EnrollWidget();
             case NavBarItem.CONNECT:
-              return ConnectWidget();
+              return MentorAccountTypeRedirect();
             case NavBarItem.ACCOUNT:
               return AuthenticationRedirect();
             default:

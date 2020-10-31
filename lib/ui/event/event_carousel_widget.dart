@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 class EventCarouselWidget extends StatefulWidget {
   EventCarouselWidget({Key key, this.stream, this.screenSize})
       : super(key: key);
-  Stream<Event> stream;
-  Size screenSize;
+  final Stream<Event> stream;
+  final Size screenSize;
   @override
   _EventCarouselWidgetState createState() => _EventCarouselWidgetState();
 }

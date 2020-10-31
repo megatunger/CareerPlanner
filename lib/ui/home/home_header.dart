@@ -37,7 +37,7 @@ class HomeHeader extends StatelessWidget {
                           ),
                     ),
                     Text(
-                      'Chưa-nghĩ-ra-slogan',
+                      'Planning for your future',
                       style: Theme.of(context).textTheme.subtitle1.copyWith(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

@@ -2,10 +2,15 @@ import 'package:careerplanner/model/enroll/career/career_object.dart';
 import 'package:careerplanner/model/enroll/university/university_object.dart';
 import 'package:careerplanner/model/event/event_object.dart';
 import 'package:careerplanner/model/news/article_object.dart';
+import 'package:careerplanner/model/thread/create_thread_params.dart';
+import 'package:careerplanner/model/thread/thread_detail_params.dart';
 import 'package:careerplanner/ui/about_us/about_us_widget.dart';
 import 'package:careerplanner/ui/account/account_type/register_form_widget.dart';
 import 'package:careerplanner/ui/account/authentication_redirect.dart';
+import 'package:careerplanner/ui/account/login_by_phone.dart';
+import 'package:careerplanner/ui/connect/mentor/connect_mentor_widget.dart';
 import 'package:careerplanner/ui/connect/thread/create_thread.dart';
+import 'package:careerplanner/ui/connect/thread/thread_detail_widget.dart';
 import 'package:careerplanner/ui/enroll/career/career_detail_widget.dart';
 import 'package:careerplanner/ui/enroll/career_list/listing_all_career.dart';
 import 'package:careerplanner/ui/enroll/university/university_detail.dart';
@@ -34,6 +39,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => LayoutWidget());
       case '/authenticate':
         return MaterialPageRoute(builder: (_) => AuthenticationRedirect());
+      case '/authenticate/login/phone':
+        return MaterialPageRoute(builder: (_) => LoginByPhone());
       case '/authenticate/register':
         var _accountType = settings.arguments as String;
         return MaterialPageRoute(
@@ -73,8 +80,19 @@ class AppRouter {
             builder: (_) => NewsDetailWidget(article: _article));
       case '/rewards':
         return MaterialPageRoute(builder: (_) => RewardsWidget());
+      case '/connect/mentor':
+        return MaterialPageRoute(builder: (_) => ConnectMentorWidget());
       case '/connect/thread/new':
-        return MaterialPageRoute(builder: (_) => CreateThread());
+        var _args = settings.arguments as CreateThreadParams;
+        return MaterialPageRoute(
+            builder: (_) => CreateThread(
+                createdThread: _args.createdThread,
+                mentorUid: _args.mentorUid));
+      case '/connect/thread/detail':
+        var _args = settings.arguments as ThreadDetailParams;
+        return MaterialPageRoute(
+            builder: (_) =>
+                ThreadDetailWidget(threadId: _args.threadId, uid: _args.uid));
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
@@ -90,6 +108,7 @@ class Routes {
   static const String onBoardingRoute = '/onBoarding';
   static const String homeRoute = '/';
   static const String authenticateRoute = '/authenticate';
+  static const String loginByPhoneRoute = '/authenticate/login/phone';
   static const String registerRoute = '/authenticate/register';
   static const String aboutUsRoute = '/aboutUs';
   static const String careerDetailRoute = '/career/detail';
@@ -104,5 +123,7 @@ class Routes {
   static const String newsListRoute = '/news/all';
   static const String newsDetailRoute = '/news/detail';
   static const String rewardsRoute = '/rewards';
+  static const String connectMentorRoute = '/connect/mentor';
   static const String connectNewThreadRoute = '/connect/thread/new';
+  static const String connectDetailThreadRoute = '/connect/thread/detail';
 }

@@ -135,13 +135,13 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
 
   void saveShownOnboarding() async {
     print('End of onboarding');
-    SVProgressHUD.show('');
+    SVProgressHUD.show(status: '');
     FirebaseAuth.instance.signInAnonymously().then((value) async {
       await SharedPreferences.getInstance().then((value) {
         value.setBool(Constants.shownOnboardingScreen, true);
         accountBloc.createNewCollection();
         Navigator.pushReplacementNamed(context, Routes.homeRoute);
-        SVProgressHUD.dismissWithDelay(1500);
+        SVProgressHUD.dismiss(delay: Duration(milliseconds: 1500));
       });
     });
   }

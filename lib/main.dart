@@ -1,25 +1,22 @@
 import 'package:careerplanner/util/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_sentry/flutter_sentry.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(App());
-  SharedPreferences.getInstance().then((value) {
-    value.clear();
-  });
-}
+// void main() {
+//   runApp(App());
+// }
 
-// Future<void> main() => FlutterSentry.wrap(
-//       () async {
-//         // Optionally other initializers, like Firebase.
-//
-//         runApp(App());
-//       },
-//       dsn:
-//           'https://1c7798597c8b44878c2b81428b742908@o353025.ingest.sentry.io/5440168',
-//     );
+Future<void> main() => FlutterSentry.wrap(
+      () async {
+        // Optionally other initializers, like Firebase.
+
+        runApp(App());
+      },
+      dsn:
+          'https://1c7798597c8b44878c2b81428b742908@o353025.ingest.sentry.io/5440168',
+    );
 
 class App extends StatelessWidget {
   @override

@@ -1,0 +1,99 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color run --machine --track-widget-creation --device-id=00008020-0011194C3A41002E --start-paused --dart-define=flutter.inspector.structuredErrors=true lib/main.dart
+
+## exception
+
+DartDevelopmentServiceException: DartDevelopmentServiceException: Existing VM service clients prevent DDS from taking control.
+
+```
+#0      _DartDevelopmentService._startDDSServer (package:dds/src/dds_impl.dart:68:7)
+<asynchronous suspension>
+#1      _DartDevelopmentService.startService (package:dds/src/dds_impl.dart:33:11)
+<asynchronous suspension>
+#2      DartDevelopmentService.startDartDevelopmentService (package:dds/dds.dart:108:19)
+<asynchronous suspension>
+#3      DartDevelopmentService.startDartDevelopmentService (package:flutter_tools/src/base/dds.dart:40:55)
+#4      FlutterDevice.connect.<anonymous closure> (package:flutter_tools/src/resident_runner.dart:224:26)
+#5      _rootRunUnary (dart:async/zone.dart:1198:47)
+#6      _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#7      _CustomZone.runUnaryGuarded (dart:async/zone.dart:1005:7)
+#8      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:357:11)
+#9      _BufferingStreamSubscription._add (dart:async/stream_impl.dart:285:7)
+#10     _SyncBroadcastStreamController._sendData (dart:async/broadcast_stream_controller.dart:385:25)
+#11     _BroadcastStreamController.add (dart:async/broadcast_stream_controller.dart:250:5)
+#12     _AsBroadcastStreamController.add (dart:async/broadcast_stream_controller.dart:484:11)
+#13     _rootRunUnary (dart:async/zone.dart:1198:47)
+#14     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#15     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1005:7)
+#16     _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:357:11)
+#17     _DelayedData.perform (dart:async/stream_impl.dart:611:14)
+#18     _StreamImplEvents.handleNext (dart:async/stream_impl.dart:730:11)
+#19     _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:687:7)
+#20     _rootRun (dart:async/zone.dart:1182:47)
+#21     _CustomZone.run (dart:async/zone.dart:1093:19)
+#22     _CustomZone.runGuarded (dart:async/zone.dart:997:7)
+#23     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1037:23)
+#24     _rootRun (dart:async/zone.dart:1190:13)
+#25     _CustomZone.run (dart:async/zone.dart:1093:19)
+#26     _CustomZone.runGuarded (dart:async/zone.dart:997:7)
+#27     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1037:23)
+#28     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#29     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#30     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#31     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:169:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel dev, 1.23.0-4.0.pre, on Mac OS X 10.15.6 19G2021 x86_64, locale en-VN)
+    • Flutter version 1.23.0-4.0.pre at /Users/megatunger/development/flutter
+    • Framework revision 83dd176777 (5 weeks ago), 2020-09-22 12:04:44 -0700
+    • Engine revision 2abe69c608
+    • Dart version 2.10.0 (build 2.10.0-136.0.dev)
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.2)
+    • Android SDK at /Users/megatunger/Library/Android/sdk
+    • Platform android-30, build-tools 30.0.2
+    • Java binary at: /Users/megatunger/Library/Application Support/JetBrains/Toolbox/apps/AndroidStudio/ch-0/201.6858069/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b3-6222593)
+    • All Android licenses accepted.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 12.0.1)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 12.0.1, Build version 12A7300
+    • CocoaPods version 1.10.0
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[!] Android Studio (version 4.1)
+    • Android Studio at /Users/megatunger/Library/Application Support/JetBrains/Toolbox/apps/AndroidStudio/ch-0/201.6858069/Android Studio.app/Contents
+    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
+    ✗ Dart plugin not installed; this adds Dart specific functionality.
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b3-6222593)
+
+[!] IntelliJ IDEA Ultimate Edition (version 2020.2.3)
+    • IntelliJ at /Users/megatunger/Applications/JetBrains Toolbox/IntelliJ IDEA Ultimate.app
+    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
+    ✗ Dart plugin not installed; this adds Dart specific functionality.
+    • For information about installing plugins, see
+      https://flutter.dev/intellij-setup/#installing-the-plugins
+
+[!] VS Code (version 1.50.1)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    ✗ Flutter extension not installed; install from
+      https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+
+[✓] Connected device (4 available)
+    • Android SDK built for x86 (mobile) • emulator-5554             • android-arm    • Android null (API null)
+    • Megatunger’s iPhone (mobile)       • 00008020-0011194C3A41002E • ios            • iOS 13.7
+    • Web Server (web)                   • web-server                • web-javascript • Flutter Tools
+    • Chrome (web)                       • chrome                    • web-javascript • Google Chrome 86.0.4240.111
+
+! Doctor found issues in 3 categories.
+```

@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AccountBloc {
   FirebaseAuth _auth = FirebaseAuth.instance;
@@ -30,12 +31,9 @@ class AccountBloc {
     }
   }
 
-  checkMentor() async {
-    final _realtimeDB = await constants.database
-        .reference()
-        .child('mentors')
-        .child(currentUser().uid)
-        .once();
+  checkMentor(String uid) async {
+    final _realtimeDB =
+        await constants.database.reference().child('mentors').child(uid).once();
     final mentor =
         MentorObject.fromJson(Map<String, dynamic>.from(_realtimeDB.value));
     print(mentor.toJson());
@@ -88,6 +86,9 @@ class AccountBloc {
 
   logout() async {
     _auth.signOut();
+    SharedPreferences.getInstance().then((value) {
+      value.clear();
+    });
   }
 
   dispose() {

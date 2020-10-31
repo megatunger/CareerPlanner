@@ -14,6 +14,11 @@ class ExistedMentorAccount extends StatefulWidget {
 
 class _ExistedMentorAccountState extends State<ExistedMentorAccount> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: CareerPlannerTheme.neutralBackground,
@@ -52,17 +57,6 @@ class _ExistedMentorAccountState extends State<ExistedMentorAccount> {
                       ),
                     ),
                   )),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4.0),
-              child: HomeShortcutWidget(
-                  title: 'Test Button',
-                  icon: Icons.edit,
-                  color: CareerPlannerTheme.primaryColor,
-                  callback: () {
-                    accountBloc.mirrorToFirestore(
-                        account: accountBloc.accountSubject.value);
-                  }),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 4.0),
