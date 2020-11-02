@@ -8,55 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a5f251-40b1-43af-94ef-0d973c256735" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/android/app/proguard-android-optimize.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flutter_03.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/bloc/thread/thread_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/model/account/mentors_data.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/model/thread/create_thread_params.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/model/thread/thread_detail_params.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/model/thread/thread_object.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/account/account_type_redirect.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/account/login_by_phone.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/account/phone_verify/phone_login_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/connect/mentor/mentor_account_type_redirect.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/connect/student/mentor_bubble.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/connect/thread/create_comment.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/connect/thread/thread_card.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/connect/thread/thread_comments_listing.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/connect/thread/thread_detail_arguments.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/connect/thread/thread_detail_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/connect/thread/thread_images_carousel.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ui/shared/login_required_feature_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/app/key.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/careerplanner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/careerplanner.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Flutter/.last_build_id" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/.last_build_id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/bloc/account/account_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bloc/account/account_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/account/authentication_redirect.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/account/authentication_redirect.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/account/existed_mentor_account.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/account/existed_mentor_account.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/account/phone_verify/phone_verify_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/account/phone_verify/phone_verify_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/account/welcome_new_account.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/account/welcome_new_account.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/connect/mentor/connect_mentor_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/connect/mentor/connect_mentor_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/connect/mentor/listing_threads_mentor_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/connect/mentor/listing_threads_mentor_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/connect/student/connect_student_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/connect/student/connect_student_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/connect/thread/create_thread.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/connect/thread/create_thread.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/enroll/university_list/listing_all_university.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/enroll/university_list/listing_all_university.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/event/event_carousel_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/event/event_carousel_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/home/home_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/home/home_header.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/layout/layout_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/layout/layout_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/splash/onboarding_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/splash/onboarding_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/util/router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/router.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/util/theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/theme.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +44,7 @@
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/android" />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -101,11 +57,11 @@
       <recent name="$PROJECT_DIR$/lib/model/enroll/career" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/android" />
+      <recent name="$PROJECT_DIR$/android/app" />
       <recent name="$PROJECT_DIR$/assets/illustrations" />
       <recent name="$PROJECT_DIR$/assets/icon" />
       <recent name="$PROJECT_DIR$/lib/ui/account" />
-      <recent name="$PROJECT_DIR$/lib/bloc" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -139,8 +95,8 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="335" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1602479830375" />
-    <state width="1398" height="299" key="GridCell.Tab.0.bottom" timestamp="1604151618017">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="299" key="GridCell.Tab.0.bottom" timestamp="1604224503109">
+      <screen x="0" y="0" width="1920" height="1014" />
     </state>
     <state width="1878" height="216" key="GridCell.Tab.0.bottom/-1280.280.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1601448738848" />
     <state width="1878" height="244" key="GridCell.Tab.0.bottom/-1280.303.1280.777/0.23.1920.1000@0.23.1920.1000" timestamp="1601519145210" />
@@ -148,12 +104,13 @@
     <state width="1878" height="250" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.0.1920.1014@0.0.1920.1014" timestamp="1604133545437" />
     <state width="1878" height="277" key="GridCell.Tab.0.bottom/-864.1080.1280.800/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1603558493157" />
     <state width="1398" height="299" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1604151618017" />
+    <state width="1398" height="299" key="GridCell.Tab.0.bottom/0.0.1920.1014/-1920.23.1920.1057@0.0.1920.1014" timestamp="1604224503109" />
     <state width="1398" height="175" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1604149522868" />
     <state width="1396" height="247" key="GridCell.Tab.0.bottom/0.23.1440.820@0.23.1440.820" timestamp="1601711033010" />
     <state width="1499" height="290" key="GridCell.Tab.0.bottom/0.23.1920.991@0.23.1920.991" timestamp="1603969199121" />
     <state width="1544" height="280" key="GridCell.Tab.0.bottom/0.23.1920.999@0.23.1920.999" timestamp="1602742014535" />
-    <state width="1398" height="299" key="GridCell.Tab.0.center" timestamp="1604151618012">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="299" key="GridCell.Tab.0.center" timestamp="1604224503103">
+      <screen x="0" y="0" width="1920" height="1014" />
     </state>
     <state width="1878" height="216" key="GridCell.Tab.0.center/-1280.280.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1601448738845" />
     <state width="1878" height="244" key="GridCell.Tab.0.center/-1280.303.1280.777/0.23.1920.1000@0.23.1920.1000" timestamp="1601519145208" />
@@ -161,12 +118,13 @@
     <state width="1878" height="250" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.0.1920.1014@0.0.1920.1014" timestamp="1604133545432" />
     <state width="1878" height="277" key="GridCell.Tab.0.center/-864.1080.1280.800/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1603558493153" />
     <state width="1398" height="299" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1604151618012" />
+    <state width="1398" height="299" key="GridCell.Tab.0.center/0.0.1920.1014/-1920.23.1920.1057@0.0.1920.1014" timestamp="1604224503103" />
     <state width="1398" height="175" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1604149522864" />
     <state width="1396" height="247" key="GridCell.Tab.0.center/0.23.1440.820@0.23.1440.820" timestamp="1601711033009" />
     <state width="1499" height="290" key="GridCell.Tab.0.center/0.23.1920.991@0.23.1920.991" timestamp="1603969199120" />
     <state width="1544" height="280" key="GridCell.Tab.0.center/0.23.1920.999@0.23.1920.999" timestamp="1602742014534" />
-    <state width="1398" height="299" key="GridCell.Tab.0.left" timestamp="1604151617992">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="299" key="GridCell.Tab.0.left" timestamp="1604224503058">
+      <screen x="0" y="0" width="1920" height="1014" />
     </state>
     <state width="1878" height="216" key="GridCell.Tab.0.left/-1280.280.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1601448738843" />
     <state width="1878" height="244" key="GridCell.Tab.0.left/-1280.303.1280.777/0.23.1920.1000@0.23.1920.1000" timestamp="1601519145206" />
@@ -176,10 +134,11 @@
     <state width="1398" height="299" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1604151617992" />
     <state width="1398" height="175" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1604149522862" />
     <state width="1396" height="247" key="GridCell.Tab.0.left/0.23.1440.820@0.23.1440.820" timestamp="1601711033009" />
+    <state width="1398" height="299" key="GridCell.Tab.0.left/0.23.1920.991/-1920.23.1920.1057@0.23.1920.991" timestamp="1604224503058" />
     <state width="1499" height="290" key="GridCell.Tab.0.left/0.23.1920.991@0.23.1920.991" timestamp="1603969199120" />
     <state width="1544" height="280" key="GridCell.Tab.0.left/0.23.1920.999@0.23.1920.999" timestamp="1602742014533" />
-    <state width="1398" height="299" key="GridCell.Tab.0.right" timestamp="1604151618014">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="299" key="GridCell.Tab.0.right" timestamp="1604224503107">
+      <screen x="0" y="0" width="1920" height="1014" />
     </state>
     <state width="1878" height="216" key="GridCell.Tab.0.right/-1280.280.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1601448738846" />
     <state width="1878" height="244" key="GridCell.Tab.0.right/-1280.303.1280.777/0.23.1920.1000@0.23.1920.1000" timestamp="1601519145209" />
@@ -187,6 +146,7 @@
     <state width="1878" height="250" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.0.1920.1014@0.0.1920.1014" timestamp="1604133545435" />
     <state width="1878" height="277" key="GridCell.Tab.0.right/-864.1080.1280.800/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1603558493155" />
     <state width="1398" height="299" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1604151618014" />
+    <state width="1398" height="299" key="GridCell.Tab.0.right/0.0.1920.1014/-1920.23.1920.1057@0.0.1920.1014" timestamp="1604224503107" />
     <state width="1398" height="175" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1604149522867" />
     <state width="1396" height="247" key="GridCell.Tab.0.right/0.23.1440.820@0.23.1440.820" timestamp="1601711033010" />
     <state width="1499" height="290" key="GridCell.Tab.0.right/0.23.1920.991@0.23.1920.991" timestamp="1603969199120" />
