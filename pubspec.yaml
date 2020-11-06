@@ -46,7 +46,7 @@ dependencies:
   cached_network_image: ^2.3.3
   flutter_cache_manager: ^2.0.0
   tutorial_coach_mark: ^0.5.1
-  shared_preferences: ^0.5.12+2
+  shared_preferences: ^0.5.12+4
   introduction_screen: ^1.0.9
   search_page: ^1.3.0
   animations: ^1.1.2
@@ -56,12 +56,13 @@ dependencies:
   transparent_image: any
   auto_animated: any
   intl: ^0.16.1
-  flutter_svprogresshud: ^0.0.5
-  package_info: ^0.4.3
+  flutter_svprogresshud: ^0.0.6
+  package_info: ^0.4.3+2
   image_picker: ^0.6.7+12
   firebase_picture_uploader: ^1.1.2
-  flutter_local_notifications: ^3.0.1
+  flutter_local_notifications: ^3.0.1+2
   uuid: ^2.2.2
+  firebase_admob: ^0.10.1
 
 
 

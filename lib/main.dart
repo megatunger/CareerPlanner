@@ -10,8 +10,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 Future<void> main() => FlutterSentry.wrap(
       () async {
-        // Optionally other initializers, like Firebase.
-
         runApp(App());
       },
       dsn:

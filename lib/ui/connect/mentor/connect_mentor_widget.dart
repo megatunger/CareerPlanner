@@ -2,6 +2,7 @@ import 'package:careerplanner/bloc/account/account_bloc.dart';
 import 'package:careerplanner/model/account/mentor_object.dart';
 import 'package:careerplanner/ui/connect/mentor/listing_threads_mentor_widget.dart';
 import 'package:careerplanner/ui/connect/mentor/mentor_information_widget.dart';
+import 'package:careerplanner/util/ads_helper.dart';
 import 'package:flutter/material.dart';
 
 class ConnectMentorWidget extends StatefulWidget {
@@ -14,6 +15,7 @@ class ConnectMentorWidget extends StatefulWidget {
 class _ConnectMentorWidgetState extends State<ConnectMentorWidget> {
   @override
   void initState() {
+    Ads.hideBannerAd();
     if (this.widget.mentorUid != null) {
       accountBloc.checkMentor(this.widget.mentorUid);
     } else {
@@ -49,9 +51,7 @@ class _ConnectMentorWidgetState extends State<ConnectMentorWidget> {
             ]);
           }
         }
-        return Scaffold(
-          body: Center(child: CircularProgressIndicator())
-        );
+        return Scaffold(body: Center(child: CircularProgressIndicator()));
       },
     );
   }
@@ -76,6 +76,7 @@ class _ConnectMentorWidgetState extends State<ConnectMentorWidget> {
 
   @override
   void dispose() {
+    Ads.showBannerAd();
     accountBloc.mentorAccountSubject.sink.add(null);
     super.dispose();
   }

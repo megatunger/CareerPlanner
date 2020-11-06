@@ -57,6 +57,8 @@ class CareerCard extends StatelessWidget {
                                 tag: 'career_title_${_careerObject.id}',
                                 child: Text(
                                   '${_careerObject.careerName}',
+                                  overflow: TextOverflow.fade,
+                                  maxLines: 1,
                                   style: Theme.of(context)
                                       .textTheme
                                       .headline5

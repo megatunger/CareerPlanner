@@ -2,6 +2,7 @@ import 'package:auto_animated/auto_animated.dart';
 import 'package:careerplanner/model/event/event_data.dart';
 import 'package:careerplanner/ui/event/event_card.dart';
 import 'package:careerplanner/ui/shared/loading_widget.dart';
+import 'package:careerplanner/util/ads_helper.dart';
 import 'package:careerplanner/util/constants.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -16,6 +17,12 @@ class EventListWidget extends StatefulWidget {
 }
 
 class _EventListWidgetState extends State<EventListWidget> {
+  @override
+  void initState() {
+    Ads.hideBannerAd();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,4 +91,10 @@ class _EventListWidgetState extends State<EventListWidget> {
               ),
             ),
           );
+
+  @override
+  void dispose() {
+    Ads.showBannerAd();
+    super.dispose();
+  }
 }

@@ -1,6 +1,7 @@
 import 'package:careerplanner/bloc/account/account_bloc.dart';
 import 'package:careerplanner/bloc/thread/thread_bloc.dart';
 import 'package:careerplanner/model/thread/thread_object.dart';
+import 'package:careerplanner/util/ads_helper.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:firebase_picture_uploader/firebase_picture_uploader.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -28,6 +29,7 @@ class _CreateThreadState extends State<CreateThread> {
 
   @override
   void initState() {
+    Ads.showPopupAd();
     if (this.widget.createdThread != null) {
       thread = this.widget.createdThread;
       this.widget.createdThread.imagesObject.forEach((element) {

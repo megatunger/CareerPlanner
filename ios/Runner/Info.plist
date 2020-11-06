@@ -43,6 +43,8 @@
 	<string>Ứng dụng cần truy cập thư viện ảnh để giúp bạn tải ảnh lên khi kết nối chuyên gia.</string>
 	<key>SentryDSN</key>
 	<string>https://1c7798597c8b44878c2b81428b742908@o353025.ingest.sentry.io/5440168</string>
+	<key>GADApplicationIdentifier</key>
+    <string>ca-app-pub-7182124402339573~7890432880</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

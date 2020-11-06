@@ -1,6 +1,7 @@
 import 'package:careerplanner/model/enroll/university/university_data.dart';
 import 'package:careerplanner/model/enroll/university/university_object.dart';
 import 'package:careerplanner/ui/enroll/university_list/listing_all_university/university_card.dart';
+import 'package:careerplanner/util/ads_helper.dart';
 import 'package:careerplanner/util/constants.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,12 @@ class ListingAllUniversity extends StatefulWidget {
 
 class _ListingAllUniversityState extends State<ListingAllUniversity> {
   UniversityData data;
+
+  @override
+  void initState() {
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -132,5 +139,11 @@ class _ListingAllUniversityState extends State<ListingAllUniversity> {
             )),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    Ads.showBannerAd();
+    super.dispose();
   }
 }

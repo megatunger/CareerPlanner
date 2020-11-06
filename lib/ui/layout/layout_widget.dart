@@ -58,42 +58,40 @@ class _LayoutWidgetState extends State<LayoutWidget> {
             decoration: BoxDecoration(color: Colors.white, boxShadow: [
               BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(.1))
             ]),
-            child: SafeArea(
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
-                child: GNav(
-                    gap: 8,
-                    activeColor: Colors.white,
-                    iconSize: 24,
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 5),
-                    duration: Duration(milliseconds: 250),
-                    tabBackgroundColor: CareerPlannerTheme.primaryColor,
-                    tabs: [
-                      GButton(
-                        icon: Icons.auto_stories,
-                        iconColor: CareerPlannerTheme.primaryColor,
-                        text: 'Hướng Nghiệp',
-                      ),
-                      GButton(
-                        icon: Icons.school,
-                        iconColor: CareerPlannerTheme.primaryColor,
-                        text: 'Tuyển Sinh',
-                      ),
-                      GButton(
-                        icon: Icons.people,
-                        iconColor: CareerPlannerTheme.primaryColor,
-                        text: 'Kết nối',
-                      ),
-                      GButton(
-                        icon: Icons.account_circle,
-                        iconColor: CareerPlannerTheme.primaryColor,
-                        text: 'Cá Nhân',
-                      ),
-                    ],
-                    selectedIndex: snapshot.data.index,
-                    onTabChange: _bottomNavBarBloc.pickItem),
-              ),
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
+              child: GNav(
+                  gap: 8,
+                  activeColor: Colors.white,
+                  iconSize: 24,
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+                  duration: Duration(milliseconds: 250),
+                  tabBackgroundColor: CareerPlannerTheme.primaryColor,
+                  tabs: [
+                    GButton(
+                      icon: Icons.auto_stories,
+                      iconColor: CareerPlannerTheme.primaryColor,
+                      text: 'Hướng Nghiệp',
+                    ),
+                    GButton(
+                      icon: Icons.school,
+                      iconColor: CareerPlannerTheme.primaryColor,
+                      text: 'Tuyển Sinh',
+                    ),
+                    GButton(
+                      icon: Icons.people,
+                      iconColor: CareerPlannerTheme.primaryColor,
+                      text: 'Kết nối',
+                    ),
+                    GButton(
+                      icon: Icons.account_circle,
+                      iconColor: CareerPlannerTheme.primaryColor,
+                      text: 'Cá Nhân',
+                    ),
+                  ],
+                  selectedIndex: snapshot.data.index,
+                  onTabChange: _bottomNavBarBloc.pickItem),
             ),
           );
         },

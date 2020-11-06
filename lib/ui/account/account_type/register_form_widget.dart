@@ -1,6 +1,7 @@
 import 'package:careerplanner/bloc/account/account_bloc.dart';
 import 'package:careerplanner/model/account/account_object.dart';
 import 'package:careerplanner/ui/shared/loading_widget.dart';
+import 'package:careerplanner/util/ads_helper.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,7 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
   final spaceRow = 16.0;
   @override
   void initState() {
+    Ads.hideBannerAd();
     accountBloc.getCurrentInformation();
     super.initState();
   }
@@ -185,5 +187,11 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
       _scaffoldKey.currentState.showSnackBar(
           SnackBar(content: Text('Vui lòng kiểm tra lại các thông tin!')));
     }
+  }
+
+  @override
+  void dispose() {
+    Ads.showBannerAd();
+    super.dispose();
   }
 }

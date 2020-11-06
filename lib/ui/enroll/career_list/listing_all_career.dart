@@ -2,6 +2,7 @@ import 'package:careerplanner/model/enroll/career/career_data.dart';
 import 'package:careerplanner/model/enroll/career/career_object.dart';
 import 'package:careerplanner/ui/enroll/career_list/listing_all_career/career_card.dart';
 import 'package:careerplanner/ui/shared/loading_widget.dart';
+import 'package:careerplanner/util/ads_helper.dart';
 import 'package:careerplanner/util/constants.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -20,6 +21,11 @@ class ListingAllCareer extends StatefulWidget {
 
 class _ListingAllCareerState extends State<ListingAllCareer> {
   List<CareerObject> data = [];
+  @override
+  void initState() {
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -152,5 +158,10 @@ class _ListingAllCareerState extends State<ListingAllCareer> {
         builder: (career) => CareerCard(career),
       ),
     );
+  }
+  @override
+  void dispose() {
+    Ads.showBannerAd();
+    super.dispose();
   }
 }

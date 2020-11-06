@@ -3,6 +3,7 @@ import 'package:careerplanner/model/quiz/question_object.dart';
 import 'package:careerplanner/ui/quiz/quiz_results/quiz_result_body.dart';
 import 'package:careerplanner/ui/quiz/quiz_results/quiz_result_did_not_finished.dart';
 import 'package:careerplanner/ui/quiz/quiz_results/quiz_result_header.dart';
+import 'package:careerplanner/util/ads_helper.dart';
 import 'package:careerplanner/util/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,8 @@ class QuizResults extends StatefulWidget {
 class _QuizResultsState extends State<QuizResults> {
   @override
   void initState() {
+    Ads.hideBannerAd();
+    Ads.showPopupAd();
     quizBloc.getQuestion();
     super.initState();
   }
@@ -61,5 +64,12 @@ class _QuizResultsState extends State<QuizResults> {
                     })),
           ])),
     );
+  }
+
+  @override
+  void dispose() {
+    Ads.showBannerAd();
+    Ads.hidePopupAd();
+    super.dispose();
   }
 }

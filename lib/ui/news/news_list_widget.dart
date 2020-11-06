@@ -2,6 +2,7 @@ import 'package:auto_animated/auto_animated.dart';
 import 'package:careerplanner/model/news/article_data.dart';
 import 'package:careerplanner/ui/news/news_card.dart';
 import 'package:careerplanner/ui/shared/loading_widget.dart';
+import 'package:careerplanner/util/ads_helper.dart';
 import 'package:careerplanner/util/constants.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,12 @@ class NewsListWidget extends StatefulWidget {
 }
 
 class _NewsListWidgetState extends State<NewsListWidget> {
+  @override
+  void initState() {
+    Ads.hideBannerAd();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,4 +99,9 @@ class _NewsListWidgetState extends State<NewsListWidget> {
               ),
             ),
           );
+  @override
+  void dispose() {
+    Ads.showBannerAd();
+    super.dispose();
+  }
 }
