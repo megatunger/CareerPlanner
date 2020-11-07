@@ -21,7 +21,6 @@ class _ListingAllUniversityState extends State<ListingAllUniversity> {
 
   @override
   void initState() {
-    Ads.hideBannerAd();
     super.initState();
   }
 
@@ -143,7 +142,6 @@ class _ListingAllUniversityState extends State<ListingAllUniversity> {
 
   @override
   void dispose() {
-    Ads.showBannerAd();
     super.dispose();
   }
 }

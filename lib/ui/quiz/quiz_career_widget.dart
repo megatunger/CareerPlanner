@@ -1,4 +1,3 @@
-import 'package:careerplanner/util/ads_helper.dart';
 import 'package:careerplanner/util/router.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +12,6 @@ class QuizCareerWidget extends StatefulWidget {
 class _QuizCareerWidgetState extends State<QuizCareerWidget> {
   @override
   void initState() {
-    Ads.hideBannerAd();
     super.initState();
   }
 
@@ -71,7 +69,6 @@ class _QuizCareerWidgetState extends State<QuizCareerWidget> {
 
   @override
   void dispose() {
-    Ads.showBannerAd();
     super.dispose();
   }
 }

@@ -4,7 +4,6 @@ import 'package:careerplanner/ui/enroll/career_list/career_list_carousel.dart';
 import 'package:careerplanner/ui/enroll/university_list/university_bubbles_widget.dart';
 import 'package:careerplanner/ui/event/event_carousel_widget.dart';
 import 'package:careerplanner/ui/news/news_carousel_widget.dart';
-import 'package:careerplanner/util/ads_helper.dart';
 import 'package:careerplanner/util/constants.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +22,6 @@ class _CareerDetailWidgetState extends State<CareerDetailWidget> {
 
   @override
   void initState() {
-    Ads.hideBannerAd();
     super.initState();
   }
 
@@ -150,9 +148,9 @@ class _CareerDetailWidgetState extends State<CareerDetailWidget> {
       ),
     );
   }
+
   @override
   void dispose() {
-    Ads.showBannerAd();
     super.dispose();
   }
 }

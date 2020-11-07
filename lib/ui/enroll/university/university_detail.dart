@@ -19,7 +19,6 @@ class _UniversityDetailState extends State<UniversityDetail>
 
   @override
   void initState() {
-    Ads.hideBannerAd();
     _tabController = new TabController(length: 5, vsync: this);
     super.initState();
   }
@@ -89,7 +88,6 @@ class _UniversityDetailState extends State<UniversityDetail>
 
   @override
   void dispose() {
-    Ads.showBannerAd();
     super.dispose();
   }
 }

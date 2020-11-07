@@ -19,7 +19,6 @@ class EventListWidget extends StatefulWidget {
 class _EventListWidgetState extends State<EventListWidget> {
   @override
   void initState() {
-    Ads.hideBannerAd();
     super.initState();
   }
 
@@ -94,7 +93,6 @@ class _EventListWidgetState extends State<EventListWidget> {
 
   @override
   void dispose() {
-    Ads.showBannerAd();
     super.dispose();
   }
 }

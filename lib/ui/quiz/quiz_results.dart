@@ -17,7 +17,6 @@ class QuizResults extends StatefulWidget {
 class _QuizResultsState extends State<QuizResults> {
   @override
   void initState() {
-    Ads.hideBannerAd();
     Ads.showPopupAd();
     quizBloc.getQuestion();
     super.initState();
@@ -68,7 +67,6 @@ class _QuizResultsState extends State<QuizResults> {
 
   @override
   void dispose() {
-    Ads.showBannerAd();
     Ads.hidePopupAd();
     super.dispose();
   }

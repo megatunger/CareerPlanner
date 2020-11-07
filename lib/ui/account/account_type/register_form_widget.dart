@@ -20,7 +20,6 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
   final spaceRow = 16.0;
   @override
   void initState() {
-    Ads.hideBannerAd();
     accountBloc.getCurrentInformation();
     super.initState();
   }
@@ -191,7 +190,6 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
 
   @override
   void dispose() {
-    Ads.showBannerAd();
     super.dispose();
   }
 }

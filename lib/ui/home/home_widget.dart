@@ -19,7 +19,6 @@ class HomeWidget extends StatefulWidget {
 class _HomeWidgetState extends State<HomeWidget> {
   @override
   void initState() {
-    Ads.showBannerAd();
     super.initState();
   }
 

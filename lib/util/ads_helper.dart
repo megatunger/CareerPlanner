@@ -53,7 +53,7 @@ class Ads {
     if (_bannerAd == null) _bannerAd = _createBannerAd();
     _bannerAd
       ..load()
-      ..show(anchorOffset: 34.0, anchorType: AnchorType.bottom);
+      ..show(anchorType: AnchorType.bottom);
   }
 
   static void hideBannerAd() async {

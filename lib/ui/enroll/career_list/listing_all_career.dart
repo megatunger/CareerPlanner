@@ -23,7 +23,6 @@ class _ListingAllCareerState extends State<ListingAllCareer> {
   List<CareerObject> data = [];
   @override
   void initState() {
-    Ads.hideBannerAd();
     super.initState();
   }
 
@@ -161,7 +160,6 @@ class _ListingAllCareerState extends State<ListingAllCareer> {
   }
   @override
   void dispose() {
-    Ads.showBannerAd();
     super.dispose();
   }
 }
