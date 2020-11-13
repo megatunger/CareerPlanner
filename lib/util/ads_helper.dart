@@ -1,3 +1,4 @@
+import 'package:careerplanner/bloc/admob/admob_bloc.dart';
 import 'package:careerplanner/util/ad_manager.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 
@@ -44,7 +45,10 @@ class Ads {
       adUnitId: AdManager.bannerAdUnitId,
       size: AdSize.fullBanner,
       listener: (MobileAdEvent event) {
-        print("BannerAd event $event");
+        print("BannerAd event $event: ${event.index}");
+        if (event.index == 0) {
+          admobBloc.showBannerAd(state: true);
+        }
       },
     );
   }

@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_sentry/flutter_sentry.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'bloc/admob/admob_bloc.dart';
+
 // void main() {
 //   runApp(App());
 // }
@@ -18,12 +20,24 @@ Future<void> main() => FlutterSentry.wrap(
           'https://1c7798597c8b44878c2b81428b742908@o353025.ingest.sentry.io/5440168',
     );
 
-class App extends StatelessWidget {
+class App extends StatefulWidget {
+  App({Key key}) : super(key: key);
+
+  @override
+  _AppState createState() => _AppState();
+}
+
+class _AppState extends State<App> {
   var paddingBottom = 56.0;
+  @override
+  void initState() {
+    admobBloc.showBannerAd(state: false);
+    super.initState();
+    Ads.showBannerAd();
+  }
 
   @override
   Widget build(BuildContext context) {
-    Ads.showBannerAd();
     SystemChannels.textInput.invokeMethod('TextInput.hide');
     MaterialColor primarySwatch =
         createMaterialColor(CareerPlannerTheme.primaryColor);
@@ -33,12 +47,20 @@ class App extends StatelessWidget {
       initialRoute: Routes.startupRoute,
       builder: (context, widget) {
         final mediaQuery = MediaQuery.of(context);
-        return Container(
-            color: CareerPlannerTheme.primaryColor,
-            child: Padding(
-              padding: EdgeInsets.only(bottom: paddingBottom),
-              child: SafeArea(child: widget),
-            ));
+        return StreamBuilder(
+          stream: admobBloc.bannerAdInit,
+          builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
+            if (snapshot.hasData && snapshot.data == true) {
+              return Container(
+                  color: CareerPlannerTheme.primaryColor,
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: paddingBottom),
+                    child: SafeArea(child: widget),
+                  ));
+            }
+            return widget;
+          },
+        );
       },
       theme: ThemeData(
         primarySwatch: primarySwatch,
