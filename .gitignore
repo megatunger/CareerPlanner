@@ -24,3 +24,4 @@ google-services.json
 key.jks
 .DS_Store
 GoogleService-Info.plist
+ad_manager.dart
