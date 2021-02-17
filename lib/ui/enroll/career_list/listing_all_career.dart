@@ -2,7 +2,6 @@ import 'package:careerplanner/model/enroll/career/career_data.dart';
 import 'package:careerplanner/model/enroll/career/career_object.dart';
 import 'package:careerplanner/ui/enroll/career_list/listing_all_career/career_card.dart';
 import 'package:careerplanner/ui/shared/loading_widget.dart';
-import 'package:careerplanner/util/ads_helper.dart';
 import 'package:careerplanner/util/constants.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -158,6 +157,7 @@ class _ListingAllCareerState extends State<ListingAllCareer> {
       ),
     );
   }
+
   @override
   void dispose() {
     super.dispose();

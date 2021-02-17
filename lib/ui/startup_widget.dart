@@ -1,8 +1,6 @@
 import 'package:careerplanner/ui/splash/animated_splash.dart';
-import 'package:careerplanner/util/ad_manager.dart';
 import 'package:careerplanner/util/constants.dart';
 import 'package:careerplanner/util/router.dart';
-import 'package:firebase_admob/firebase_admob.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,7 +18,6 @@ class _StartupWidgetState extends State<StartupWidget> {
   @override
   void initState() {
     constants.init();
-    FirebaseAdMob.instance.initialize(appId: AdManager.appId);
     super.initState();
   }
 

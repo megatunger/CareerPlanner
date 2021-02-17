@@ -3,7 +3,6 @@ import 'package:careerplanner/ui/home/home_header.dart';
 import 'package:careerplanner/ui/home/home_shortcuts_widget.dart';
 import 'package:careerplanner/ui/home/quiz_card/quiz_card.dart';
 import 'package:careerplanner/ui/news/news_carousel_widget.dart';
-import 'package:careerplanner/util/ads_helper.dart';
 import 'package:careerplanner/util/constants.dart';
 import 'package:careerplanner/util/router.dart';
 import 'package:careerplanner/util/theme.dart';

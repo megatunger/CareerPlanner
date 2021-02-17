@@ -1,6 +1,5 @@
 import 'package:careerplanner/bloc/enroll/career/career_bloc.dart';
 import 'package:careerplanner/model/enroll/career/career_object.dart';
-import 'package:careerplanner/util/ads_helper.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +23,6 @@ class _FavouriteButtonState extends State<FavouriteButton> {
         textColor: Colors.white,
         onPressed: () async {
           tapFavourite();
-          Ads.showRewardAd();
         },
         icon: StreamBuilder(
             stream: careerBloc.didFavouriteCareer(this.widget.careerObject),

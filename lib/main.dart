@@ -1,4 +1,3 @@
-import 'package:careerplanner/util/ads_helper.dart';
 import 'package:careerplanner/util/router.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +32,6 @@ class _AppState extends State<App> {
   void initState() {
     admobBloc.showBannerAd(state: false);
     super.initState();
-    Ads.showBannerAd();
   }
 
   @override

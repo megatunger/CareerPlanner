@@ -1,10 +1,7 @@
-import 'package:careerplanner/bloc/quiz/quiz_bloc.dart';
 import 'package:careerplanner/model/quiz/question_object.dart';
 import 'package:careerplanner/ui/quiz/question/out_of_questions_widget.dart';
 import 'package:careerplanner/util/constants.dart';
-import 'package:careerplanner/util/router.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class QuestionWidget extends StatefulWidget {
   QuestionWidget({Key key, this.data}) : super(key: key);
@@ -46,23 +43,23 @@ class _QuestionWidgetState extends State<QuestionWidget> {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  RatingBar(
-                    initialRating: 0,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                    itemBuilder: (context, _) => Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                    ),
-                    onRatingUpdate: (rating) {
-                      quizBloc.updateAnswer(this.widget.data, rating);
-                      Navigator.pushReplacementNamed(
-                          context, Routes.quizQuestionsRoute);
-                    },
-                  ),
+                  // RatingBar(
+                  //   initialRating: 0,
+                  //   minRating: 1,
+                  //   direction: Axis.horizontal,
+                  //   allowHalfRating: true,
+                  //   itemCount: 5,
+                  //   itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                  //   itemBuilder: (context, _) => Icon(
+                  //     Icons.star,
+                  //     color: Colors.amber,
+                  //   ),
+                  //   onRatingUpdate: (rating) {
+                  //     quizBloc.updateAnswer(this.widget.data, rating);
+                  //     Navigator.pushReplacementNamed(
+                  //         context, Routes.quizQuestionsRoute);
+                  //   },
+                  // ),
                   SizedBox(height: 16),
                   Text(
                       '1 điểm: Bạn thấy nhận định hoàn toàn không đúng\n2 điểm: Nhận định đúng trong một số trường hợp\n3 điểm: Nhận định đúng 50%\n4 điểm: Nhận định đúng khoảng 80 – 90%\n5 điểm: Nhận định hoàn toàn đúng',

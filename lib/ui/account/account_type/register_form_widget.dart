@@ -1,7 +1,6 @@
 import 'package:careerplanner/bloc/account/account_bloc.dart';
 import 'package:careerplanner/model/account/account_object.dart';
 import 'package:careerplanner/ui/shared/loading_widget.dart';
-import 'package:careerplanner/util/ads_helper.dart';
 import 'package:careerplanner/util/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
