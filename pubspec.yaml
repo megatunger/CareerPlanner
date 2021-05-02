@@ -27,7 +27,6 @@ dependencies:
   cupertino_icons: ^1.0.0
   firebase_analytics: ^6.1.0
   firebase_core: ^0.5.1
-  firebase_crashlytics: ^0.2.2
   firebase_messaging: ^7.0.3
   firebase_auth: ^0.18.2
   firebase_database: ^4.2.0
@@ -62,6 +61,7 @@ dependencies:
   firebase_picture_uploader: ^1.1.2
   flutter_local_notifications: ^3.0.1+2
   uuid: ^2.2.2
+  app_tracking_transparency: ^2.0.0
 
 
 dependency_overrides:

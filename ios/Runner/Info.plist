@@ -43,6 +43,8 @@
 	<string>Ứng dụng cần truy cập ghi âm để thu tiếng cho video</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Ứng dụng cần truy cập thư viện ảnh để giúp bạn tải ảnh lên khi kết nối chuyên gia.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Chúng tôi sẽ sử dụng định danh của bạn để cải thiện sản phẩm</string>
 	<key>SentryDSN</key>
 	<string>https://1c7798597c8b44878c2b81428b742908@o353025.ingest.sentry.io/5440168</string>
 	<key>UIBackgroundModes</key>

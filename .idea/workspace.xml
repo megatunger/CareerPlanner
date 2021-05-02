@@ -28,12 +28,16 @@
     <list default="true" id="a7a5f251-40b1-43af-94ef-0d973c256735" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/quiz/question/question_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/quiz/question/question_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careerplanner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/careerplanner.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/startup_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/startup_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +73,7 @@
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/android/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -124,49 +128,42 @@
     <state x="509" y="211" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1619007075883">
       <screen x="0" y="28" width="1600" height="805" />
     </state>
-    <state x="458" y="209" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1440.810@0.25.1440.810" timestamp="1610549968799" />
     <state x="509" y="211" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.28.1600.805@0.28.1600.805" timestamp="1619007075883" />
     <state x="574" y="128" width="1239" height="785" key="AVDManager" timestamp="1618495548661">
       <screen x="0" y="28" width="1920" height="985" />
     </state>
     <state x="574" y="128" width="1239" height="785" key="AVDManager/0.28.1920.985@0.28.1920.985" timestamp="1618495548661" />
-    <state width="1160" height="432" key="GridCell.Tab.0.bottom" timestamp="1619007591465">
-      <screen x="0" y="28" width="1600" height="805" />
+    <state width="1238" height="205" key="GridCell.Tab.0.bottom" timestamp="1619620825391">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1398" height="228" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1610629439415" />
-    <state width="1398" height="316" key="GridCell.Tab.0.bottom/0.25.1440.810@0.25.1440.810" timestamp="1610626018736" />
+    <state width="1238" height="205" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1619620825391" />
     <state width="1160" height="432" key="GridCell.Tab.0.bottom/0.28.1600.805@0.28.1600.805" timestamp="1619007591465" />
     <state width="1391" height="253" key="GridCell.Tab.0.bottom/0.28.1920.985@0.28.1920.985" timestamp="1618491574527" />
-    <state width="1160" height="432" key="GridCell.Tab.0.center" timestamp="1619007591464">
-      <screen x="0" y="28" width="1600" height="805" />
+    <state width="1238" height="205" key="GridCell.Tab.0.center" timestamp="1619620825390">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1398" height="228" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1610629439412" />
-    <state width="1398" height="316" key="GridCell.Tab.0.center/0.25.1440.810@0.25.1440.810" timestamp="1610626018729" />
+    <state width="1238" height="205" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1619620825390" />
     <state width="1160" height="432" key="GridCell.Tab.0.center/0.28.1600.805@0.28.1600.805" timestamp="1619007591464" />
     <state width="1391" height="253" key="GridCell.Tab.0.center/0.28.1920.985@0.28.1920.985" timestamp="1618491574526" />
-    <state width="1160" height="432" key="GridCell.Tab.0.left" timestamp="1619007591464">
-      <screen x="0" y="28" width="1600" height="805" />
+    <state width="1238" height="205" key="GridCell.Tab.0.left" timestamp="1619620825390">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1398" height="228" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1610629439410" />
-    <state width="1398" height="316" key="GridCell.Tab.0.left/0.25.1440.810@0.25.1440.810" timestamp="1610626018720" />
+    <state width="1238" height="205" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1619620825390" />
     <state width="1160" height="432" key="GridCell.Tab.0.left/0.28.1600.805@0.28.1600.805" timestamp="1619007591464" />
     <state width="1391" height="253" key="GridCell.Tab.0.left/0.28.1920.985@0.28.1920.985" timestamp="1618491574526" />
-    <state width="1160" height="432" key="GridCell.Tab.0.right" timestamp="1619007591465">
-      <screen x="0" y="28" width="1600" height="805" />
+    <state width="1238" height="205" key="GridCell.Tab.0.right" timestamp="1619620825391">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1398" height="228" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1610629439413" />
-    <state width="1398" height="316" key="GridCell.Tab.0.right/0.25.1440.810@0.25.1440.810" timestamp="1610626018731" />
+    <state width="1238" height="205" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1619620825391" />
     <state width="1160" height="432" key="GridCell.Tab.0.right/0.28.1600.805@0.28.1600.805" timestamp="1619007591465" />
     <state width="1391" height="253" key="GridCell.Tab.0.right/0.28.1920.985@0.28.1920.985" timestamp="1618491574527" />
     <state x="165" y="123" width="1316" height="728" key="SettingsEditor" timestamp="1618491461397">
       <screen x="0" y="28" width="1920" height="985" />
     </state>
-    <state x="124" y="103" width="1316" height="728" key="SettingsEditor/0.25.1440.806@0.25.1440.806" timestamp="1610549314043" />
     <state x="165" y="123" key="SettingsEditor/0.28.1920.985@0.28.1920.985" timestamp="1618491461397" />
     <state x="468" y="158" width="1132" height="545" key="find.popup" timestamp="1619007049524">
       <screen x="0" y="28" width="1600" height="805" />
     </state>
-    <state x="422" y="156" width="1018" height="548" key="find.popup/0.25.1440.810@0.25.1440.810" timestamp="1610627531379" />
     <state x="468" y="158" width="1132" height="545" key="find.popup/0.28.1600.805@0.28.1600.805" timestamp="1619007049524" />
     <state x="713" y="204" width="672" height="555" key="search.everywhere.popup" timestamp="1619006876621">
       <screen x="0" y="28" width="1600" height="805" />

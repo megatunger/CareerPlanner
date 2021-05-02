@@ -1,3 +1,4 @@
+import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import 'package:careerplanner/ui/splash/animated_splash.dart';
 import 'package:careerplanner/util/constants.dart';
 import 'package:careerplanner/util/router.dart';
@@ -17,6 +18,7 @@ class _StartupWidgetState extends State<StartupWidget> {
 
   @override
   void initState() {
+    AppTrackingTransparency.requestTrackingAuthorization();
     constants.init();
     super.initState();
   }
